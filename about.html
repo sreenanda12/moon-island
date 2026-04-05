@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Moon Island - Backwater Experience</title>
+    <meta name="description" content="Learn about Moon Island. A hidden island of calm offering a perfect blend of adventure, culture, and relaxation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="water-overlay"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="moon island logo.jpeg" alt="Moon Island Logo" class="brand-logo">
+            Moon Island
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link active">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-btn" aria-label="Menu" id="menu-toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url('assets/village.png');"></div>
+            <div class="page-header-overlay"></div>
+            <div class="container fade-up-element">
+                <h1 class="page-title float-ui">Our Story</h1>
+            </div>
+        </section>
+
+        <!-- SECTION 1: ABOUT MOON ISLAND -->
+        <section class="welcome-section">
+            <div class="container side-passing-layout">
+                <div class="side-content slide-in-left">
+                    <h2 class="section-heading">Moon Island – A Hidden Island of Calm</h2>
+                    <p>Moon Island was born out of a profound love for the untouched tranquility of nature. Here, the gentle rustle of coconut leaves and the subtle ripples of the backwaters replace the noise of the city.</p>
+                    <p class="mt-2">Our mission is to immerse you in authentic Kerala life, allowing you to disconnect from the world and reconnect with serenity. Every experience is carefully crafted to honor the local culture and the pristine environment.</p>
+                </div>
+                <div class="side-image slide-in-right float-ui-delayed">
+                    <img src="assets/kayak.png" alt="Peaceful Backwaters">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: EXPERIENCE PHILOSOPHY -->
+        <section class="why-us-section">
+            <div class="container fade-up-element">
+                <h2 class="section-heading center">Our Philosophy</h2>
+                <p class="cta-text">“We offer a perfect blend of adventure, culture, and relaxation...”</p>
+                <p style="max-width: 800px; margin: 0 auto; color: rgba(245, 230, 202, 0.85);">We believe traveling is not just about visiting places; it's about the feelings you take back home. From exhilarating kayaking adventures to the comforting warmth of a traditional homestay meal, our philosophy centers on providing meaningful, unforgettable experiences that speak to the soul.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: VISUAL EXPERIENCE -->
+        <section class="activities-section" style="padding-top: 4rem;">
+            <div class="container">
+                <h2 class="section-heading center fade-up-element">A Visual Journey</h2>
+                
+                <div class="story-timeline">
+                    <!-- Kayaking -->
+                    <div class="story-block">
+                        <div class="story-image slide-in-left float-ui">
+                            <img src="assets/kayak.png" alt="Kayaking through backwaters">
+                        </div>
+                        <div class="story-text slide-in-right">
+                            <h3>The Art of Paddling</h3>
+                            <p>Silently glide through intricate networks of wild canals. It is a meditative journey where the only sounds are bird calls and water meeting wood.</p>
+                        </div>
+                    </div>
+
+                    <!-- Village Life -->
+                    <div class="story-block">
+                        <div class="story-image slide-in-right float-ui-delayed">
+                            <img src="assets/village.png" alt="Village life">
+                        </div>
+                        <div class="story-text slide-in-left">
+                            <h3>Authentic Village Life</h3>
+                            <p>Walk the paths of the locals. Witness the timeless art of coir making, traditional leaf weaving, and uncover the vibrant spirit of our community.</p>
+                        </div>
+                    </div>
+
+                    <!-- Homestay & Sunset (Combined) -->
+                    <div class="story-block">
+                        <div class="story-image slide-in-left float-ui">
+                            <img src="assets/homestay.png" alt="Boutique Homestay at Sunset">
+                        </div>
+                        <div class="story-text slide-in-right">
+                            <h3>Golden Hours & Comfort</h3>
+                            <p>End your days watching majestic sunsets paint the skies orange, followed by a restful retreat in our boutique homestay filled with Kerala's heartfelt hospitality.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Moon Island. A Hidden Island of Calm.</p>
+    </footer>
+
+    <a href="contact.html" class="floating-book-btn" aria-label="Book Now">🗓️</a>
+    <script src="script.js"></script>
+</body>
+</html>

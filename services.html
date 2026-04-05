@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing | Moon Island - Backwater Experience</title>
+    <meta name="description" content="Explore our activities, pricing, and special packages for an unforgettable backwater experience in Kerala.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="water-overlay"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="moon island logo.jpeg" alt="Moon Island Logo" class="brand-logo">
+            Moon Island
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link active">Services</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <button class="menu-btn" aria-label="Menu" id="menu-toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url('assets/hero.png'); filter: hue-rotate(-15deg) brightness(0.6);"></div>
+            <div class="page-header-overlay"></div>
+            <div class="container fade-up-element">
+                <h1 class="page-title float-ui">Our Services</h1>
+            </div>
+        </section>
+
+        <!-- SECTION 1: ACTIVITIES (REUSE) -->
+        <section class="activities-section" style="padding-top: 4rem;">
+            <div class="container">
+                <h2 class="section-heading center fade-up-element">Experience the Magic</h2>
+                <div class="activities-grid">
+                    <div class="activity-card glass-card card-3d fade-up-element float-ui">
+                        <div class="activity-image">
+                            <img src="assets/kayak.png" alt="Kayaking">
+                            <div class="activity-icon">🌊</div>
+                        </div>
+                        <div class="activity-details">
+                            <h3>Kayaking Through Narrow Canals</h3>
+                            <p>Paddle through peaceful, natural routes with a safe and guided experience perfect for beginners and experts alike.</p>
+                        </div>
+                    </div>
+                    <div class="activity-card glass-card card-3d fade-up-element float-ui-delayed">
+                        <div class="activity-image">
+                            <img src="assets/boat.png" alt="Shikkara Boating">
+                            <div class="activity-icon">🚤</div>
+                        </div>
+                        <div class="activity-details">
+                            <h3>Shikkara Boating Ride</h3>
+                            <p>A relaxing family-friendly ride through serene backwaters, beautiful during both sunrise and sunset.</p>
+                        </div>
+                    </div>
+                    <div class="activity-card glass-card card-3d fade-up-element float-ui">
+                        <div class="activity-image">
+                            <img src="assets/village.png" alt="Village Walk">
+                            <div class="activity-icon">🚶‍♂️</div>
+                        </div>
+                        <div class="activity-details">
+                            <h3>Village Walk Experience</h3>
+                            <p>Engage in authentic cultural interactions, coconut leaf weaving, and toddy tasting with friendly locals.</p>
+                        </div>
+                    </div>
+                    <div class="activity-card glass-card card-3d fade-up-element float-ui-delayed">
+                        <div class="activity-image">
+                            <img src="assets/homestay.png" alt="Homestay">
+                            <div class="activity-icon">🏡</div>
+                        </div>
+                        <div class="activity-details">
+                            <h3>Homestay Experience</h3>
+                            <p>Comfortable rooms surrounded by nature, offering authentic Kerala-style food and personalized service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PRICING & PACKAGES -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-heading center fade-up-element">Individual Activities</h2>
+                <div class="pricing-grid">
+                    <div class="glass-card card-3d price-card fade-up-element float-ui">
+                        <h3>Kayaking</h3>
+                        <div class="price-tag">₹800</div>
+                        <p>Per person / Session</p>
+                        <a href="contact.html" class="btn btn-outline mt-2 ripple">Book Activity</a>
+                    </div>
+                    <div class="glass-card card-3d price-card fade-up-element float-ui-delayed">
+                        <div class="badge">Most Popular</div>
+                        <h3>Shikkara Ride</h3>
+                        <div class="price-tag">₹2000</div>
+                        <p>Per boat / Session</p>
+                        <a href="contact.html" class="btn btn-primary mt-2 ripple">Book Activity</a>
+                    </div>
+                    <div class="glass-card card-3d price-card fade-up-element float-ui">
+                        <h3>Homestay</h3>
+                        <div class="price-tag">₹2500</div>
+                        <p>Per room / Night</p>
+                        <a href="contact.html" class="btn btn-outline mt-2 ripple">Book Stay</a>
+                    </div>
+                </div>
+
+                <h2 class="section-heading center fade-up-element mt-4">Curated Packages</h2>
+                <div class="packages-grid fade-up-element">
+                    <div class="pkg-card">
+                        <h4>Backwater Package</h4>
+                        <div class="pkg-price">₹1499</div>
+                    </div>
+                    <div class="pkg-card">
+                        <h4>Group Package</h4>
+                        <div class="pkg-price">₹1699</div>
+                    </div>
+                    <div class="pkg-card" style="box-shadow: 0 0 20px rgba(46, 139, 192, 0.4); border-color: var(--bg-aqua-blue);">
+                        <div class="badge" style="top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;">Best Value</div>
+                        <h4>Day Escape</h4>
+                        <div class="pkg-price">₹1999</div>
+                    </div>
+                    <div class="pkg-card">
+                        <h4>Stay Package</h4>
+                        <div class="pkg-price">₹3999</div>
+                    </div>
+                    <div class="pkg-card">
+                        <h4>Couple Package</h4>
+                        <div class="pkg-price">₹4999</div>
+                    </div>
+                </div>
+                
+                <div class="center mt-2 fade-up-element">
+                    <a href="contact.html" class="btn btn-accent ripple">Book a Package</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: NOTES -->
+        <section class="container fade-up-element" style="padding-top: 0;">
+            <div class="notes-section">
+                <h3>Important Notes</h3>
+                <p class="mt-2">Advance booking is strictly required to secure your spot.</p>
+                <p>Custom packages are available upon request. Let us tailor the perfect day for you.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Moon Island. A Hidden Island of Calm.</p>
+    </footer>
+
+    <a href="contact.html" class="floating-book-btn" aria-label="Book Now">🗓️</a>
+    <script src="script.js"></script>
+</body>
+</html>

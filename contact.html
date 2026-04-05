@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Moon Island - Backwater Experience</title>
+    <meta name="description" content="Contact Moon Island to plan your perfect backwater experience. Get in touch for bookings, customized packages, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="water-overlay"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <img src="moon island logo.jpeg" alt="Moon Island Logo" class="brand-logo">
+            Moon Island
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+        <button class="menu-btn" aria-label="Menu" id="menu-toggle">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url('assets/homestay.png'); filter: brightness(0.5);"></div>
+            <div class="page-header-overlay"></div>
+            <div class="container fade-up-element text-center">
+                <h1 class="page-title float-ui">Let’s plan your perfect backwater experience</h1>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="container" style="padding-top: 4rem;">
+            <div class="contact-layout">
+                
+                <!-- Contact Form -->
+                <div class="glass-card card-3d fade-up-element slide-in-left">
+                    <h2 class="section-heading">Send a Message</h2>
+                    <p style="margin-bottom: 2rem;">Fill out the form below to initiate your booking or inquiry.</p>
+                    
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+91 00000 00000" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message / Inquiry</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us what you're looking for (dates, packages, people)..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-accent mt-2 ripple w-100">Send Request</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info slide-in-right fade-up-element">
+                    <h2 class="section-heading">Get in Touch</h2>
+                    
+                    <div class="contact-item float-ui">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Murinjapuzha Old Bridge, Kerala</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item float-ui-delayed">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9961577599</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-2">
+                        <a href="https://wa.me/919961577599" target="_blank" rel="noopener noreferrer" class="btn btn-outline ripple w-100 float-ui shadow-wrapper">
+                            <span style="font-size: 1.2rem; margin-right: 8px;">💬</span> Chat on WhatsApp
+                        </a>
+                    </div>
+                    
+                    <!-- Google Map -->
+                    <div class="map-container float-ui mt-2" style="height: 250px; margin-top: 2rem;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.56993181816!2d76.3533441!3d9.670355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b087da344ea1d5d%3A0xc31bc2c231711200!2sMurinjapuzha%20Bridge!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Moon Island. A Hidden Island of Calm.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
