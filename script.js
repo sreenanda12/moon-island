@@ -24,22 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
+    let navTicking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!navTicking) {
+            window.requestAnimationFrame(() => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                navTicking = false;
+            });
+            navTicking = true;
         }
-    });
+    }, { passive: true });
 
     // 4. Parallax Background Scroll
     const parallaxElements = document.querySelectorAll('.hero-bg-img, .page-header-bg');
+    let parallaxTicking = false;
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        parallaxElements.forEach(el => {
-            el.style.transform = `translateY(${scrolled * 0.4}px)`;
-        });
-    });
+        if (window.innerWidth <= 768) return; // Disable on mobile to prevent lag
+        if (!parallaxTicking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                parallaxElements.forEach(el => {
+                    el.style.transform = `translateY(${scrolled * 0.4}px)`;
+                });
+                parallaxTicking = false;
+            });
+            parallaxTicking = true;
+        }
+    }, { passive: true });
 
     // 5. Button Ripple Effect
     const rippleButtons = document.querySelectorAll('.ripple');
@@ -64,21 +79,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. 3D Tilt Effect on Cards
     const tiltCards = document.querySelectorAll('.card-3d');
     tiltCards.forEach(card => {
+        let tiltTicking = false;
         card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; 
-            const y = e.clientY - rect.top; 
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = ((y - centerY) / centerY) * -10; 
-            const rotateY = ((x - centerX) / centerX) * 10;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
+            if (window.innerWidth <= 768) return; // Disable on mobile to prevent lag
+            if (!tiltTicking) {
+                window.requestAnimationFrame(() => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; 
+                    const y = e.clientY - rect.top; 
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -10; 
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    tiltTicking = false;
+                });
+                tiltTicking = true;
+            }
+        }, { passive: true });
         
         card.addEventListener('mouseleave', () => {
+            if (window.innerWidth <= 768) return;
             card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
         });
     });

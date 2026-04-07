@@ -124,13 +124,15 @@ ul { list-style: none; }
 .nav-link {
     font-size: 1rem;
     font-weight: 500;
-    color: rgba(245, 230, 202, 0.7);
+    color: var(--text-sand-beige);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
     position: relative;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--bg-aqua-blue);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .nav-link::after {
@@ -1206,4 +1208,98 @@ footer p {
         font-size: 1.2rem;
     }
     .section-heading { font-size: 2.2rem; }
+
+    /* =========================================================
+       MASSIVE MOBILE PERFORMANCE & LAG FIXES 
+       ========================================================= */
+    
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 1. Disable expensive repaint animations on mobile */
+    .water-overlay {
+        animation: none !important;
+        mix-blend-mode: normal !important; /* Extremely expensive on Android */
+        opacity: 0.03 !important; /* Still gives texture, but very cheap */
+    }
+    .particles-container {
+        animation: none !important; /* Animating background-position causes repaints */
+    }
+    .hero-bg-img {
+        animation: none !important; /* Stop animating background-size/scale */
+    }
+    
+    /* 2. Optimize blurring and glassmorphism */
+    .glass-card, .glass-container {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(15, 40, 70, 0.95) !important; /* Solid fallback */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important; /* Reduced shadow */
+    }
+    .blur-btn {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    .navbar.scrolled {
+        backdrop-filter: blur(8px) !important; /* Keep navbar blur, but reduce intensity */
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    /* 3. Strip expensive filters/glows that lag scroll */
+    .animated-moon {
+        filter: none !important; /* Blur filter combined with box-shadows is very slow */
+        box-shadow: 0 0 30px rgba(245, 230, 202, 0.3) !important;
+        animation: none !important; /* Eliminate drifting on mobile for pure stability */
+    }
+    .hero-title {
+        text-shadow: 0px 2px 10px rgba(0,0,0,0.8) !important; /* Reduced shadow complexity */
+    }
+    .card-lift {
+        transition: none !important; /* Disable heavy hover transitions that trigger easily */
+    }
+    
+    /* 4. Fix horizontal overflow issues */
+    .container {
+        width: 92%;
+        padding: 3rem 0;
+    }
+    body, html {
+        overflow-x: hidden !important;
+        width: 100%;
+    }
+    
+    /* 5. Reduce grid and spacing complexity */
+    .premium-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    .compact-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .contact-layout { 
+        gap: 2rem !important;
+        padding: 1rem 0 !important;
+    }
+    .story-block {
+        gap: 2rem !important;
+        margin-bottom: 3rem !important;
+    }
+
+    /* 6. Simplify general animations to pure opacity where possible */
+    .fade-up-element, .slide-in-left, .slide-in-right {
+        transform: translateY(20px); /* Less travel distance */
+    }
+    
+    /* 7. Ensure videos play well without causing stuck issues */
+    .hero-bg-video {
+        /* Allow browser to handle video memory aggressively */
+        will-change: auto;
+    }
+    
+    /* 8. Make interactive touch areas larger and snappier */
+    .btn {
+        padding: 14px 24px !important;
+    }
 }
