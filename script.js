@@ -148,4 +148,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 9. Mobile Autoplay Video Fallback
+    const heroVid = document.getElementById('heroVideo');
+    if (heroVid) {
+        // Force play immediately
+        const playPromise = heroVid.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {
+                // Autoplay blocked by mobile browser - usually requires user interaction
+                // Try playing once user scrolls/touches anywhere
+                document.body.addEventListener('touchstart', () => {
+                    heroVid.play();
+                }, { once: true });
+                document.body.addEventListener('click', () => {
+                    heroVid.play();
+                }, { once: true });
+            });
+        }
+    }
 });

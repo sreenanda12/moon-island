@@ -1758,8 +1758,7 @@ footer p {
         /* CRITICIAL: translateZ(0) causes video to vanish on iOS Safari */
         object-fit: cover !important;
         object-position: center !important;
-        background: url('assets/hero.png') center/cover no-repeat !important;
-        /* Absolute fallback */
+        background: transparent !important;
         filter: none !important;
         opacity: 1 !important;
         display: block !important;

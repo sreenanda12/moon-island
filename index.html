@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Moon Island - Backwater Experience</title>
-    <meta name="description" content="Moon Island - A Hidden Island of Calm. Experience kayaking, shikkara rides, and a boutique homestay in Kerala's backwaters.">
+    <meta name="description"
+        content="Moon Island - A Hidden Island of Calm. Experience kayaking, shikkara rides, and a boutique homestay in Kerala's backwaters.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="water-overlay"></div>
 
@@ -31,18 +36,28 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero-wrapper">
-            <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" disablePictureInPicture poster="assets/hero.png">
-                <source src="moon island vedio size.mp4" type="video/mp4">
+            <video id="heroVideo" class="hero-bg-video" autoplay muted loop playsinline preload="auto">
+                <source src="assets/moon-island-hero.mp4" type="video/mp4">
             </video>
             <div class="hero-gradient-overlay"></div>
-            
+
             <div class="container hero-content">
                 <h1 class="hero-title hero-fade-up">Moon Island</h1>
                 <h2 class="hero-subtitle hero-delay-fade">A Hidden Island of Calm</h2>
-                <p class="hero-text hero-soft-fade">Escape into a world of serene backwaters, private experiences, scenic sunsets, and poolside relaxation. Discover kayaking through hidden canals, tranquil shikkara rides, authentic village walks, and a boutique homestay designed for peace and comfort.</p>
+                <p class="hero-text hero-soft-fade">Escape into a world of serene backwaters, private experiences,
+                    scenic sunsets, and poolside relaxation. Discover kayaking through hidden canals, tranquil shikkara
+                    rides, authentic village walks, and a boutique homestay designed for peace and comfort.</p>
                 <div class="hero-btns hero-btns-container">
-                    <a href="services.html" class="btn btn-outline ripple water-ripple btn-scale-in blur-btn">Explore Experiences</a>
-                    <a href="https://wa.me/919746167994" class="btn btn-primary ripple water-ripple btn-scale-in glow-btn flex-center" aria-label="Book via WhatsApp">Book Now <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp ml-2" viewBox="0 0 16 16" style="margin-left: 8px;"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></a>
+                    <a href="services.html" class="btn btn-outline ripple water-ripple btn-scale-in blur-btn">Explore
+                        Experiences</a>
+                    <a href="https://wa.me/919746167994"
+                        class="btn btn-primary ripple water-ripple btn-scale-in glow-btn flex-center"
+                        aria-label="Book via WhatsApp">Book Now <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" fill="currentColor" class="bi bi-whatsapp ml-2" viewBox="0 0 16 16"
+                            style="margin-left: 8px;">
+                            <path
+                                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                        </svg></a>
                 </div>
             </div>
 
@@ -56,7 +71,8 @@
         <!-- TRUST SECTION -->
         <section class="trust-section page-with-moon" style="padding-top: 6rem; padding-bottom: 4rem;">
             <div class="container center glass-container rounded-2xl p-4">
-                <h2 class="section-heading center fade-up-element text-white">Trusted Backwater Experience in Kerala</h2>
+                <h2 class="section-heading center fade-up-element text-white">Trusted Backwater Experience in Kerala
+                </h2>
                 <div class="compact-grid mt-4 fade-up-element text-sand-muted" style="gap: 1rem; text-align: center;">
                     <div>✔ Guided Experiences</div>
                     <div>✔ Safe & Verified</div>
@@ -115,7 +131,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="center mt-4 fade-up-element delay-5">
                     <a href="services.html" class="btn btn-outline ripple glow-btn round-2xl">View Details</a>
                 </div>
@@ -124,12 +140,17 @@
 
         <!-- FEATURED SECTION -->
         <section class="featured-section page-with-moon" style="position: relative; overflow: hidden; padding: 6rem 0;">
-            <div class="hero-bg-img" style="background-image: url('assets/homestay.png'); filter: brightness(0.4); position: absolute; top: 0; left: 0; width: 100%; height: 120%; z-index: -3;"></div>
+            <div class="hero-bg-img"
+                style="background-image: url('assets/homestay.png'); filter: brightness(0.4); position: absolute; top: 0; left: 0; width: 100%; height: 120%; z-index: -3;">
+            </div>
             <div class="animated-moon" style="top: -20px; left: 10%;"></div>
             <div class="container center text-white fade-up-element">
                 <h2 class="section-heading hero-fade-up">Experience the Magic of Kerala Backwaters</h2>
-                <p class="mt-2 text-lg hero-soft-fade max-w-lg mx-auto" style="color: rgba(245, 230, 202, 0.9);">Our backwaters offer more than just a trip—they provide an emotional journey into the heart of untouched nature. Let the golden sunset reflection guide you towards unparalleled peace.</p>
-                <a href="about.html" class="btn btn-outline ripple btn-scale mt-4 blur-btn round-2xl">Discover Our Story</a>
+                <p class="mt-2 text-lg hero-soft-fade max-w-lg mx-auto" style="color: rgba(245, 230, 202, 0.9);">Our
+                    backwaters offer more than just a trip—they provide an emotional journey into the heart of untouched
+                    nature. Let the golden sunset reflection guide you towards unparalleled peace.</p>
+                <a href="about.html" class="btn btn-outline ripple btn-scale mt-4 blur-btn round-2xl">Discover Our
+                    Story</a>
             </div>
         </section>
 
@@ -138,7 +159,7 @@
             <div class="container">
                 <h2 class="section-heading center fade-up-element">Premium Packages</h2>
                 <div class="pkg-grid mt-4">
-                    
+
                     <div class="pkg-card detailed-pkg glass-card rounded-2xl fade-up-element delay-1">
                         <h4>Backwater Value</h4>
                         <div class="pkg-price">₹1,499 <span>per person</span></div>
@@ -158,7 +179,8 @@
                             <li>Pool Access & Village Walk</li>
                             <li>Premium Sunset View</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-primary w-100 rounded-2xl ripple glow-btn">Book Popular</a>
+                        <a href="contact.html" class="btn btn-primary w-100 rounded-2xl ripple glow-btn">Book
+                            Popular</a>
                     </div>
 
                     <div class="pkg-card detailed-pkg glass-card rounded-2xl fade-up-element delay-3">
@@ -183,15 +205,21 @@
             <div class="container fade-up-element content-fade glass-card rounded-2xl p-4">
                 <h2 class="section-heading center text-white">Book Your Experience</h2>
                 <div class="cta-contacts mt-4 flex-center">
-                    <a href="https://wa.me/919746167994" class="btn btn-primary ripple glow-btn round-2xl text-lg flex-center mr-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp mr-2" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg> WhatsApp
+                    <a href="https://wa.me/919746167994"
+                        class="btn btn-primary ripple glow-btn round-2xl text-lg flex-center mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-whatsapp mr-2" viewBox="0 0 16 16">
+                            <path
+                                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+                        </svg> WhatsApp
                     </a>
-                    <a href="mailto:mooonisland21@gmail.com" class="btn btn-outline ripple round-2xl text-lg flex-center">
+                    <a href="mailto:mooonisland21@gmail.com"
+                        class="btn btn-outline ripple round-2xl text-lg flex-center">
                         Email Us
                     </a>
                 </div>
             </div>
-            
+
             <!-- Animated Moon Background (Not Hero) -->
             <div class="animated-moon"></div>
         </section>
@@ -203,11 +231,14 @@
 
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/919746167994" class="floating-book-btn float-wa" aria-label="WhatsApp Us" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp"
+            viewBox="0 0 16 16">
+            <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
         </svg>
     </a>
 
     <script src="script.js"></script>
 </body>
+
 </html>
