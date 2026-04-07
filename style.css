@@ -1203,9 +1203,10 @@ footer p {
     }
     /* Mobile Specific Hero Adjustments */
     .hero-wrapper {
-        height: 100svh; /* Prevents jumping when address bar hides */
-        /* background removed: video handles its own poster image so we don't hide the video via z-index */
-        background: transparent !important;
+        height: 100svh !important; 
+        background: #0B1F3A !important; /* Fallback safe color just in case */
+        isolation: isolate; /* CRITICAL: Creates a local stacking context to trap the video inside */
+        z-index: 1;
     }
     .hero-title {
         font-size: 2.8rem;
@@ -1309,20 +1310,30 @@ footer p {
 
     /* 6. Simplify general animations to pure opacity where possible */
     .fade-up-element, .slide-in-left, .slide-in-right {
-        transform: translateY(15px); /* Less travel distance */
+        transform: translateY(15px); 
     }
     
     /* 7. Ensure videos play well without causing stuck issues */
     .hero-bg-video {
-        will-change: auto;
-        object-fit: cover !important; /* Premium full-bleed video */
-        object-position: center !important; /* Keep center focus */
-        background: transparent !important;
-        filter: none !important; /* CSS filters on mobile video can cause blank invisible rendering */
+        will-change: auto !important;
+        transform: none !important; /* CRITICIAL: translateZ(0) causes video to vanish on iOS Safari */
+        object-fit: cover !important; 
+        object-position: center !important; 
+        background: url('assets/hero.png') center/cover no-repeat !important; /* Absolute fallback */
+        filter: none !important; 
         opacity: 1 !important;
         display: block !important;
         visibility: visible !important;
-        z-index: -2 !important; /* Explicitly ensure correct layering */
+        z-index: -1 !important; /* Now safe because wrapper has isolation: isolate */
+        height: 100% !important;
+        width: 100% !important;
+    }
+    .hero-gradient-overlay {
+        z-index: 1 !important;
+    }
+    .hero-content {
+        z-index: 5 !important;
+        position: relative !important;
     }
     
     /* 8. Make interactive touch areas larger and snappier */
