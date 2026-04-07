@@ -1204,7 +1204,8 @@ footer p {
     /* Mobile Specific Hero Adjustments */
     .hero-wrapper {
         height: 100svh; /* Prevents jumping when address bar hides */
-        background: url('assets/hero.png') center/cover no-repeat !important; /* Seamless load */
+        /* background removed: video handles its own poster image so we don't hide the video via z-index */
+        background: transparent !important;
     }
     .hero-title {
         font-size: 2.8rem;
@@ -1317,6 +1318,11 @@ footer p {
         object-fit: cover !important; /* Premium full-bleed video */
         object-position: center !important; /* Keep center focus */
         background: transparent !important;
+        filter: none !important; /* CSS filters on mobile video can cause blank invisible rendering */
+        opacity: 1 !important;
+        display: block !important;
+        visibility: visible !important;
+        z-index: -2 !important; /* Explicitly ensure correct layering */
     }
     
     /* 8. Make interactive touch areas larger and snappier */
