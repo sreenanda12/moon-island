@@ -1204,21 +1204,29 @@ footer p {
     /* Mobile Specific Hero Adjustments */
     .hero-wrapper {
         height: 100svh; /* Prevents jumping when address bar hides */
-        background-color: #050c18 !important; /* Very dark background while video loads */
+        background: url('assets/hero.png') center/cover no-repeat !important; /* Seamless load */
     }
     .hero-title {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
     }
     .hero-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         margin-bottom: 1rem;
     }
     .hero-text {
         font-size: 0.95rem;
         padding: 0 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
     }
     .section-heading { font-size: 2rem; }
+    
+    /* Remove unwanted scroll mouse icon on mobile */
+    .scroll-indicator {
+        display: none !important;
+    }
 
     /* =========================================================
        MASSIVE MOBILE PERFORMANCE & LAG FIXES 
@@ -1306,20 +1314,24 @@ footer p {
     /* 7. Ensure videos play well without causing stuck issues */
     .hero-bg-video {
         will-change: auto;
-        object-fit: contain !important; /* Shows original video without zooming/cropping on sides */
-        background: #000; /* Black bars instead of filling with cropped video */
+        object-fit: cover !important; /* Premium full-bleed video */
+        object-position: center !important; /* Keep center focus */
+        background: transparent !important;
     }
     
     /* 8. Make interactive touch areas larger and snappier */
     .btn {
-        padding: 12px 20px !important;
-        font-size: 0.95rem !important;
+        padding: 14px 20px !important;
+        font-size: 1rem !important;
+        border-radius: 50px !important; /* Maintain elegant pill shape */
     }
     .hero-btns-container {
-        flex-direction: column; /* Stack buttons vertically on mobile */
-        gap: 1rem;
+        flex-direction: column; /* Stack vertically */
+        gap: 1.2rem;
         width: 100%;
-        padding: 0 2rem;
+        max-width: 300px; /* Keep buttons an elegant width */
+        margin: 0 auto;
+        padding: 0;
     }
     .hero-btns-container .btn {
         width: 100%;
