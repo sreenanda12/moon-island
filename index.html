@@ -7,7 +7,7 @@
     <meta name="description" content="Moon Island - A Hidden Island of Calm. Experience kayaking, shikkara rides, and a boutique homestay in Kerala's backwaters.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,7 @@
 
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="moon island logo.jpeg" alt="Moon Island Logo" class="brand-logo">
-            Moon Island
+            <img src="moon island logo.png" alt="Moon Island Logo" class="brand-logo">
         </a>
         <nav class="nav-links">
             <a href="index.html" class="nav-link active">Home</a>
@@ -32,174 +31,182 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero-wrapper">
-            <div class="hero-bg-img"></div>
+            <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" disablePictureInPicture>
+                <source src="moon island vedio hero.mp4" type="video/mp4">
+            </video>
             <div class="hero-gradient-overlay"></div>
             
             <div class="container hero-content">
-                <h2 class="hero-subtitle float-ui">A Hidden Island of Calm</h2>
-                <h1 class="hero-title float-ui-delayed">Moon Island</h1>
-                <p class="hero-text">Escape into a world of serene backwaters, private experiences, scenic sunsets, and poolside relaxation. Discover kayaking through hidden canals, tranquil shikkara rides, authentic village walks, and a boutique homestay designed for peace and comfort.</p>
-                <div class="hero-btns">
-                    <a href="services.html" class="btn btn-outline ripple">Explore Experiences</a>
-                    <a href="contact.html" class="btn btn-primary ripple">Book Now</a>
+                <h1 class="hero-title hero-fade-up">Moon Island</h1>
+                <h2 class="hero-subtitle hero-delay-fade">A Hidden Island of Calm</h2>
+                <p class="hero-text hero-soft-fade">Escape into a world of serene backwaters, private experiences, scenic sunsets, and poolside relaxation. Discover kayaking through hidden canals, tranquil shikkara rides, authentic village walks, and a boutique homestay designed for peace and comfort.</p>
+                <div class="hero-btns hero-btns-container">
+                    <a href="services.html" class="btn btn-outline ripple water-ripple btn-scale-in blur-btn">Explore Experiences</a>
+                    <a href="https://wa.me/919746167994" class="btn btn-primary ripple water-ripple btn-scale-in glow-btn flex-center" aria-label="Book via WhatsApp">Book Now <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp ml-2" viewBox="0 0 16 16" style="margin-left: 8px;"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg></a>
+                </div>
+            </div>
+
+            <div class="scroll-indicator fade-up-element">
+                <div class="mouse">
+                    <div class="wheel"></div>
                 </div>
             </div>
         </section>
 
-        <!-- WELCOME SECTION -->
-        <section class="welcome-section">
-            <div class="container side-passing-layout">
-                <div class="side-content slide-in-left">
-                    <h2 class="section-heading">Welcome to Our Backwater Experience</h2>
-                    <p>Discover the hidden beauty of Kerala’s backwaters with us. We offer a perfect blend of adventure, culture, and relaxation through unique water activities and comfortable homestay experiences.</p>
-                </div>
-                <div class="side-image slide-in-right float-ui">
-                    <img src="assets/village.png" alt="Kayaking in Backwaters">
+        <!-- TRUST SECTION -->
+        <section class="trust-section page-with-moon" style="padding-top: 6rem; padding-bottom: 4rem;">
+            <div class="container center glass-container rounded-2xl p-4">
+                <h2 class="section-heading center fade-up-element text-white">Trusted Backwater Experience in Kerala</h2>
+                <div class="compact-grid mt-4 fade-up-element text-sand-muted" style="gap: 1rem; text-align: center;">
+                    <div>✔ Guided Experiences</div>
+                    <div>✔ Safe & Verified</div>
+                    <div>✔ Local Expertise</div>
+                    <div>✔ Affordable Packages</div>
                 </div>
             </div>
+            <div class="animated-moon" style="top: 10%; right: 5%;"></div>
         </section>
 
-        <!-- ACTIVITIES SECTION (PREMIUM CARDS) -->
-        <section class="activities-section">
+        <!-- ACTIVITIES PREVIEW -->
+        <section class="activities-preview experiences-section">
             <div class="container">
-                <h2 class="section-heading center fade-up-element">🚣‍♂️ Our Activities</h2>
-                
-                <div class="activities-grid">
+                <div class="activities-grid premium-cards-grid">
                     <!-- Kayaking -->
-                    <div class="activity-card glass-card card-3d fade-up-element float-ui">
-                        <div class="activity-image">
+                    <div class="activity-card glass-card rounded-2xl card-lift fade-up-element delay-1">
+                        <div class="activity-image img-zoom preview-img">
                             <img src="assets/kayak.png" alt="Kayaking">
-                            <div class="activity-icon">🌊</div>
                         </div>
-                        <div class="activity-details">
-                            <h3>Kayaking Through Narrow, Wild Canals</h3>
-                            <p>Experience the untouched side of nature as you paddle through peaceful, narrow canals surrounded by lush greenery. This is perfect for adventure lovers and nature enthusiasts who seek a close connection with the backwaters.</p>
-                            <div class="highlights-list">
-                                <h4>Highlights:</h4>
-                                <ul>
-                                    <li>Calm and scenic routes</li>
-                                    <li>Safe and guided experience</li>
-                                    <li>Ideal for both beginners and experts</li>
-                                </ul>
-                            </div>
+                        <div class="activity-details minimal-details">
+                            <h3>Kayaking</h3>
+                            <p class="text-sand-muted line-clamp">Paddle through hidden canals</p>
                         </div>
                     </div>
 
                     <!-- Shikkara -->
-                    <div class="activity-card glass-card card-3d fade-up-element float-ui-delayed">
-                        <div class="activity-image">
-                            <img src="assets/boat.png" alt="Shikkara Boating">
-                            <div class="activity-icon">🚤</div>
+                    <div class="activity-card glass-card rounded-2xl card-lift fade-up-element delay-2">
+                        <div class="activity-image img-zoom preview-img">
+                            <img src="assets/boat.png" alt="Shikkara Ride">
                         </div>
-                        <div class="activity-details">
-                            <h3>Shikkara Boating Ride</h3>
-                            <p>Relax and enjoy a traditional shikkara boat ride through the serene backwaters. Glide through beautiful waterways while witnessing local life and stunning landscapes.</p>
-                            <div class="highlights-list">
-                                <h4>Highlights:</h4>
-                                <ul>
-                                    <li>Comfortable seating</li>
-                                    <li>Perfect for families and couples</li>
-                                    <li>Sunrise and sunset rides available</li>
-                                </ul>
-                            </div>
+                        <div class="activity-details minimal-details">
+                            <h3>Shikkara</h3>
+                            <p class="text-sand-muted line-clamp">Relax in traditional boats</p>
                         </div>
                     </div>
 
                     <!-- Village Walk -->
-                    <div class="activity-card glass-card card-3d fade-up-element float-ui">
-                        <div class="activity-image">
+                    <div class="activity-card glass-card rounded-2xl card-lift fade-up-element delay-3">
+                        <div class="activity-image img-zoom preview-img">
                             <img src="assets/village.png" alt="Village Walk">
-                            <div class="activity-icon">🚶‍♂️</div>
                         </div>
-                        <div class="activity-details">
-                            <h3>Village Walk Experience</h3>
-                            <p>Step into the heart of local life with our guided village walk. Explore traditional homes, meet friendly locals, and experience the culture, lifestyle, and daily routines of the village.</p>
-                            <div class="highlights-list">
-                                <h4>Includes:</h4>
-                                <ul>
-                                    <li>Coconut leaf weaving & Coir making</li>
-                                    <li>Toddy tapping & Toddy tasting / shop visit</li>
-                                </ul>
-                                <h4 class="mt-2">Highlights:</h4>
-                                <ul>
-                                    <li>Authentic cultural experience</li>
-                                    <li>Meaningful local interactions</li>
-                                    <li>Great for photography lovers</li>
-                                </ul>
-                            </div>
+                        <div class="activity-details minimal-details">
+                            <h3>Village Walk</h3>
+                            <p class="text-sand-muted line-clamp">Explore local life</p>
                         </div>
                     </div>
 
                     <!-- Homestay -->
-                    <div class="activity-card glass-card card-3d fade-up-element float-ui-delayed">
-                        <div class="activity-image">
+                    <div class="activity-card glass-card rounded-2xl card-lift fade-up-element delay-4">
+                        <div class="activity-image img-zoom preview-img">
                             <img src="assets/homestay.png" alt="Homestay">
-                            <div class="activity-icon">🏡</div>
                         </div>
-                        <div class="activity-details">
-                            <h3>Homestay Experience</h3>
-                            <p>Stay with us and feel at home in the lap of nature. Our homestay offers a peaceful environment with traditional hospitality and modern comfort.</p>
-                            <div class="highlights-list">
-                                <h4>Features:</h4>
-                                <ul>
-                                    <li>Clean and comfortable rooms</li>
-                                    <li>Authentic Kerala-style food</li>
-                                    <li>Friendly hosts with personalized service</li>
-                                    <li>Surrounded by nature and backwaters</li>
-                                </ul>
-                            </div>
+                        <div class="activity-details minimal-details">
+                            <h3>Homestay</h3>
+                            <p class="text-sand-muted line-clamp">Stay close to nature</p>
                         </div>
                     </div>
+                </div>
+                
+                <div class="center mt-4 fade-up-element delay-5">
+                    <a href="services.html" class="btn btn-outline ripple glow-btn round-2xl">View Details</a>
                 </div>
             </div>
         </section>
 
-        <!-- WHY CHOOSE US SECTION -->
-        <section class="why-us-section">
+        <!-- FEATURED SECTION -->
+        <section class="featured-section page-with-moon" style="position: relative; overflow: hidden; padding: 6rem 0;">
+            <div class="hero-bg-img" style="background-image: url('assets/homestay.png'); filter: brightness(0.4); position: absolute; top: 0; left: 0; width: 100%; height: 120%; z-index: -3;"></div>
+            <div class="animated-moon" style="top: -20px; left: 10%;"></div>
+            <div class="container center text-white fade-up-element">
+                <h2 class="section-heading hero-fade-up">Experience the Magic of Kerala Backwaters</h2>
+                <p class="mt-2 text-lg hero-soft-fade max-w-lg mx-auto" style="color: rgba(245, 230, 202, 0.9);">Our backwaters offer more than just a trip—they provide an emotional journey into the heart of untouched nature. Let the golden sunset reflection guide you towards unparalleled peace.</p>
+                <a href="about.html" class="btn btn-outline ripple btn-scale mt-4 blur-btn round-2xl">Discover Our Story</a>
+            </div>
+        </section>
+
+        <!-- PACKAGES PREVIEW -->
+        <section class="packages-preview experiences-section">
             <div class="container">
-                <h2 class="section-heading center fade-up-element">🌅 Why Choose Us?</h2>
-                <div class="why-grid">
-                    <div class="why-item fade-up-element">
-                        <span class="why-icon">✨</span>
-                        <h4>Unique offbeat experiences</h4>
-                        <p>Discover untouched parts of the backwaters</p>
+                <h2 class="section-heading center fade-up-element">Premium Packages</h2>
+                <div class="pkg-grid mt-4">
+                    
+                    <div class="pkg-card detailed-pkg glass-card rounded-2xl fade-up-element delay-1">
+                        <h4>Backwater Value</h4>
+                        <div class="pkg-price">₹1,499 <span>per person</span></div>
+                        <ul class="styled-list mt-2 mb-4">
+                            <li>Kayaking & Shikkara</li>
+                            <li>Pool Access</li>
+                        </ul>
+                        <a href="services.html" class="btn btn-outline w-100 rounded-2xl ripple">View Plan</a>
                     </div>
-                    <div class="why-item fade-up-element">
-                        <span class="why-icon">🦺</span>
-                        <h4>Safe and well-organized activities</h4>
-                        <p>Your safety is our absolute priority</p>
+
+                    <div class="pkg-card detailed-pkg glass-card rounded-2xl fade-up-element delay-2 highlight-card">
+                        <div class="badge glow-badge gold-badge">⭐ Most Popular</div>
+                        <h4>Day Escape Package</h4>
+                        <div class="pkg-price text-sunset">₹1,999 <span>per person</span></div>
+                        <ul class="styled-list mt-2 mb-4">
+                            <li>Kayaking + Shikkara</li>
+                            <li>Pool Access & Village Walk</li>
+                            <li>Premium Sunset View</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary w-100 rounded-2xl ripple glow-btn">Book Popular</a>
                     </div>
-                    <div class="why-item fade-up-element">
-                        <span class="why-icon">💰</span>
-                        <h4>Affordable packages</h4>
-                        <p>Premium experiences without the premium price tag</p>
+
+                    <div class="pkg-card detailed-pkg glass-card rounded-2xl fade-up-element delay-3">
+                        <h4>Couple Premium Escapes</h4>
+                        <div class="pkg-price">₹4,999 <span>per couple</span></div>
+                        <ul class="styled-list mt-2 mb-4">
+                            <li>Private Stay & Ride</li>
+                            <li>Exclusive Area Access</li>
+                        </ul>
+                        <a href="services.html" class="btn btn-outline w-100 rounded-2xl ripple">View Plan</a>
                     </div>
-                    <div class="why-item fade-up-element">
-                        <span class="why-icon">👨‍👩‍👧‍👦</span>
-                        <h4>Perfect for friends, families, and solo travelers</h4>
-                        <p>We cater to all group types</p>
-                    </div>
+
+                </div>
+                <div class="center mt-4 fade-up-element">
+                    <a href="services.html" class="btn btn-outline ripple glow-btn round-2xl">See All Scenarios</a>
                 </div>
             </div>
         </section>
 
-        <!-- CTA SECTION -->
-        <section class="cta-section">
-            <div class="container fade-up-element">
-                <h2 class="section-heading center">📞 Book Your Experience</h2>
-                <p class="cta-text">Come and create unforgettable memories with us. Whether you seek adventure or relaxation, we have something special for you.</p>
-                <a href="contact.html" class="btn btn-accent ripple">Contact Now</a>
+        <!-- FINAL CTA SECTION -->
+        <section class="cta-section refined-cta parallax-cta">
+            <div class="container fade-up-element content-fade glass-card rounded-2xl p-4">
+                <h2 class="section-heading center text-white">Book Your Experience</h2>
+                <div class="cta-contacts mt-4 flex-center">
+                    <a href="https://wa.me/919746167994" class="btn btn-primary ripple glow-btn round-2xl text-lg flex-center mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-whatsapp mr-2" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg> WhatsApp
+                    </a>
+                    <a href="mailto:mooonisland21@gmail.com" class="btn btn-outline ripple round-2xl text-lg flex-center">
+                        Email Us
+                    </a>
+                </div>
             </div>
+            
+            <!-- Animated Moon Background (Not Hero) -->
+            <div class="animated-moon"></div>
         </section>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Moon Island. A Hidden Island of Calm.</p>
     </footer>
 
-    <!-- Floating Book Button -->
-    <a href="contact.html" class="floating-book-btn" aria-label="Book Now">🗓️</a>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919746167994" class="floating-book-btn float-wa" aria-label="WhatsApp Us" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
 
     <script src="script.js"></script>
 </body>

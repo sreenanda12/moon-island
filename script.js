@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.fade-up-element, .slide-in-left, .slide-in-right');
+    const animatedElements = document.querySelectorAll('.fade-up-element, .slide-in-left, .slide-in-right, .word-reveal');
     animatedElements.forEach(el => scrollObserver.observe(el));
 
     // 8. Form Submit Simulation (Contact Page)

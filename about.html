@@ -7,7 +7,7 @@
     <meta name="description" content="Learn about Moon Island. A hidden island of calm offering a perfect blend of adventure, culture, and relaxation.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,7 @@
 
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="moon island logo.jpeg" alt="Moon Island Logo" class="brand-logo">
-            Moon Island
+            <img src="moon island logo.png" alt="Moon Island Logo" class="brand-logo">
         </a>
         <nav class="nav-links">
             <a href="index.html" class="nav-link">Home</a>
@@ -29,80 +28,76 @@
         </button>
     </header>
 
-    <main>
+    <main class="page-with-moon">
         <!-- PAGE HEADER -->
-        <section class="page-header">
+        <section class="page-header cinematic-header">
             <div class="page-header-bg" style="background-image: url('assets/village.png');"></div>
-            <div class="page-header-overlay"></div>
-            <div class="container fade-up-element">
-                <h1 class="page-title float-ui">Our Story</h1>
+            <div class="page-header-overlay subtle-overlay"></div>
+            <div class="container fade-up-element text-center">
+                <h1 class="page-title hero-fade-up">Our Story</h1>
+                <p class="subtitle mt-2 hero-soft-fade max-w-lg mx-auto text-sand-muted">Discover the origin of our serene backwater escape.</p>
             </div>
+            <div class="animated-moon"></div>
         </section>
 
-        <!-- SECTION 1: ABOUT MOON ISLAND -->
-        <section class="welcome-section">
-            <div class="container side-passing-layout">
-                <div class="side-content slide-in-left">
-                    <h2 class="section-heading">Moon Island – A Hidden Island of Calm</h2>
-                    <p>Moon Island was born out of a profound love for the untouched tranquility of nature. Here, the gentle rustle of coconut leaves and the subtle ripples of the backwaters replace the noise of the city.</p>
-                    <p class="mt-2">Our mission is to immerse you in authentic Kerala life, allowing you to disconnect from the world and reconnect with serenity. Every experience is carefully crafted to honor the local culture and the pristine environment.</p>
-                </div>
-                <div class="side-image slide-in-right float-ui-delayed">
-                    <img src="assets/kayak.png" alt="Peaceful Backwaters">
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: EXPERIENCE PHILOSOPHY -->
-        <section class="why-us-section">
-            <div class="container fade-up-element">
-                <h2 class="section-heading center">Our Philosophy</h2>
-                <p class="cta-text">“We offer a perfect blend of adventure, culture, and relaxation...”</p>
-                <p style="max-width: 800px; margin: 0 auto; color: rgba(245, 230, 202, 0.85);">We believe traveling is not just about visiting places; it's about the feelings you take back home. From exhilarating kayaking adventures to the comforting warmth of a traditional homestay meal, our philosophy centers on providing meaningful, unforgettable experiences that speak to the soul.</p>
-            </div>
-        </section>
-
-        <!-- SECTION 3: VISUAL EXPERIENCE -->
-        <section class="activities-section" style="padding-top: 4rem;">
+        <section class="story-layout experiences-section">
             <div class="container">
-                <h2 class="section-heading center fade-up-element">A Visual Journey</h2>
                 
-                <div class="story-timeline">
-                    <!-- Kayaking -->
-                    <div class="story-block">
-                        <div class="story-image slide-in-left float-ui">
-                            <img src="assets/kayak.png" alt="Kayaking through backwaters">
-                        </div>
-                        <div class="story-text slide-in-right">
-                            <h3>The Art of Paddling</h3>
-                            <p>Silently glide through intricate networks of wild canals. It is a meditative journey where the only sounds are bird calls and water meeting wood.</p>
-                        </div>
+                <!-- Our Story -->
+                <div class="story-block align-center mb-8">
+                    <div class="story-image slide-in-left img-zoom rounded-2xl glass-card p-0">
+                        <img src="assets/kayak.png" class="w-100 rounded-2xl" alt="Moon Island Kayaking Story">
                     </div>
-
-                    <!-- Village Life -->
-                    <div class="story-block">
-                        <div class="story-image slide-in-right float-ui-delayed">
-                            <img src="assets/village.png" alt="Village life">
-                        </div>
-                        <div class="story-text slide-in-left">
-                            <h3>Authentic Village Life</h3>
-                            <p>Walk the paths of the locals. Witness the timeless art of coir making, traditional leaf weaving, and uncover the vibrant spirit of our community.</p>
-                        </div>
+                    <div class="story-text slide-in-right glass-container p-4 rounded-2xl">
+                        <h2 class="section-heading text-white">Our Story</h2>
+                        <p class="text-sand-muted text-lg mt-2">Moon Island was born out of a profound love for the untouched tranquility of nature. Here, the gentle rustle of coconut leaves and the subtle ripples of the backwaters replace the noise of the city, offering a timeless escape into Kerala's magnificent landscapes.</p>
                     </div>
+                </div>
 
-                    <!-- Homestay & Sunset (Combined) -->
-                    <div class="story-block">
-                        <div class="story-image slide-in-left float-ui">
-                            <img src="assets/homestay.png" alt="Boutique Homestay at Sunset">
-                        </div>
-                        <div class="story-text slide-in-right">
-                            <h3>Golden Hours & Comfort</h3>
-                            <p>End your days watching majestic sunsets paint the skies orange, followed by a restful retreat in our boutique homestay filled with Kerala's heartfelt hospitality.</p>
-                        </div>
+                <!-- Our Mission -->
+                <div class="story-block reverse align-center mb-8 mt-8">
+                    <div class="story-image slide-in-right img-zoom rounded-2xl glass-card p-0">
+                        <img src="assets/village.png" class="w-100 rounded-2xl" alt="Authentic Village Life">
+                    </div>
+                    <div class="story-text slide-in-left glass-container p-4 rounded-2xl">
+                        <h2 class="section-heading text-white">Our Mission</h2>
+                        <p class="text-sand-muted text-lg mt-2">Our mission is to immerse you in authentic Kerala life, allowing you to disconnect from the world and reconnect with serenity. Every experience is carefully crafted to honor the local culture and the pristine backwater environment.</p>
+                    </div>
+                </div>
+
+                <!-- Experience Philosophy -->
+                <div class="story-block align-center mt-8">
+                    <div class="story-image slide-in-left img-zoom rounded-2xl glass-card p-0">
+                        <img src="assets/homestay.png" class="w-100 rounded-2xl" alt="Boutique Homestay Comfort">
+                    </div>
+                    <div class="story-text slide-in-right glass-container p-4 rounded-2xl">
+                        <h2 class="section-heading text-white">Experience Philosophy</h2>
+                        <p class="text-sand-muted text-lg mt-2">We believe traveling is not just about visiting places; it's about the feelings you take back home. From exhilarating kayaking adventures to the comforting warmth of a traditional homestay meal, our philosophy centers on providing meaningful, unforgettable experiences that speak to the soul.</p>
                     </div>
                 </div>
 
             </div>
+            
+            <!-- Why Choose Us -->
+            <div class="container mt-8 fade-up-element">
+                <h2 class="section-heading center text-white">Why Choose Us</h2>
+                <div class="compact-grid mt-4">
+                    <div class="detail-card glass-card rounded-2xl">
+                        <h4>✔ Unique offbeat experiences</h4>
+                    </div>
+                    <div class="detail-card glass-card rounded-2xl">
+                        <h4>✔ Safe and well-organized activities</h4>
+                    </div>
+                    <div class="detail-card glass-card rounded-2xl">
+                        <h4>✔ Affordable packages</h4>
+                    </div>
+                    <div class="detail-card glass-card rounded-2xl">
+                        <h4>✔ Perfect for friends, families, and solo travelers</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="particles-container"></div>
         </section>
 
     </main>
@@ -111,7 +106,12 @@
         <p>&copy; 2026 Moon Island. A Hidden Island of Calm.</p>
     </footer>
 
-    <a href="contact.html" class="floating-book-btn" aria-label="Book Now">🗓️</a>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919746167994" class="floating-book-btn float-wa" aria-label="WhatsApp Us" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.59 6.59 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
     <script src="script.js"></script>
 </body>
 </html>
