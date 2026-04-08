@@ -166,4 +166,18 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+    // 10. Activity Flip Cards (Mobile Tap Toggle)
+    const flipCards = document.querySelectorAll('.activity-flip-card');
+    flipCards.forEach(card => {
+        card.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                // If already focused, unfocus all, else focus this one
+                const wasFocused = card.classList.contains('focused');
+                flipCards.forEach(c => c.classList.remove('focused'));
+                if (!wasFocused) {
+                    card.classList.add('focused');
+                }
+            }
+        });
+    });
 });

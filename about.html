@@ -8,14 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
     <div class="water-overlay"></div>
 
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="moon island logo.png" alt="Moon Island Logo" class="brand-logo">
+            <img src="moon island logoh.png.jpeg" alt="Moon Island Logo" class="brand-logo">
         </a>
         <nav class="nav-links">
             <a href="index.html" class="nav-link">Home</a>
@@ -28,76 +28,92 @@
         </button>
     </header>
 
-    <main class="page-with-moon">
-        <!-- PAGE HEADER -->
-        <section class="page-header cinematic-header">
-            <div class="page-header-bg" style="background-image: url('assets/village.png');"></div>
-            <div class="page-header-overlay subtle-overlay"></div>
-            <div class="container fade-up-element text-center">
-                <h1 class="page-title hero-fade-up">Our Story</h1>
-                <p class="subtitle mt-2 hero-soft-fade max-w-lg mx-auto text-sand-muted">Discover the origin of our serene backwater escape.</p>
+    <main class="page-with-moon" style="background: linear-gradient(135deg, var(--bg-deep-blue), #0b111e);">
+        
+        <!-- SECTION 1: OUR STORY -->
+        <section class="about-section story-intro-section">
+            <div class="animated-moon" style="top: 10%; right: 5%;"></div>
+            <div class="container center fade-up-element about-content-narrow">
+                <h1 class="section-heading">Our Story</h1>
+                <div class="story-text-center mt-2">
+                    <p class="mb-4 text-lg">What started as a simple love for the backwaters became something more meaningful — a way to share the quiet beauty of nature with others.</p>
+                    <p class="mb-4">We grew up around these waters, watching life move slowly and peacefully. Today, we invite travelers to experience that same calm, away from crowded places and busy schedules.</p>
+                    <p class="text-white">This is not just a trip — it’s a chance to feel connected, relaxed, and truly present.</p>
+                </div>
             </div>
-            <div class="animated-moon"></div>
         </section>
 
-        <section class="story-layout experiences-section">
+        <!-- SECTION 2: WHY CHOOSE US (EXISTING) -->
+        <section class="why-different-section" style="padding: 6rem 0 8rem;">
             <div class="container">
-                
-                <!-- Our Story -->
-                <div class="story-block align-center mb-8">
-                    <div class="story-image slide-in-left img-zoom rounded-2xl glass-card p-0">
-                        <img src="assets/kayak.png" class="w-100 rounded-2xl" alt="Moon Island Kayaking Story">
+                <h2 class="section-heading center text-white mb-8 fade-up-element">Why Choose Us</h2>
+                <div class="why-choose-grid mt-4 fade-up-element delay-1">
+                    <div class="why-choose-card glass-card rounded-2xl">
+                        <div class="why-icon float-icon">✨</div>
+                        <h3>Unique Experiences</h3>
+                        <p class="text-sand-muted">Explore hidden canals and offbeat routes.</p>
                     </div>
-                    <div class="story-text slide-in-right glass-container p-4 rounded-2xl">
-                        <h2 class="section-heading text-white">Our Story</h2>
-                        <p class="text-sand-muted text-lg mt-2">Moon Island was born out of a profound love for the untouched tranquility of nature. Here, the gentle rustle of coconut leaves and the subtle ripples of the backwaters replace the noise of the city, offering a timeless escape into Kerala's magnificent landscapes.</p>
+                    <div class="why-choose-card glass-card rounded-2xl">
+                        <div class="why-icon float-icon">🛡️</div>
+                        <h3>Safe & Organized</h3>
+                        <p class="text-sand-muted">Guided, secure, and well-planned activities.</p>
                     </div>
-                </div>
-
-                <!-- Our Mission -->
-                <div class="story-block reverse align-center mb-8 mt-8">
-                    <div class="story-image slide-in-right img-zoom rounded-2xl glass-card p-0">
-                        <img src="assets/village.png" class="w-100 rounded-2xl" alt="Authentic Village Life">
+                    <div class="why-choose-card glass-card rounded-2xl">
+                        <div class="why-icon float-icon">💰</div>
+                        <h3>Affordable Packages</h3>
+                        <p class="text-sand-muted">Premium experiences at the very best price.</p>
                     </div>
-                    <div class="story-text slide-in-left glass-container p-4 rounded-2xl">
-                        <h2 class="section-heading text-white">Our Mission</h2>
-                        <p class="text-sand-muted text-lg mt-2">Our mission is to immerse you in authentic Kerala life, allowing you to disconnect from the world and reconnect with serenity. Every experience is carefully crafted to honor the local culture and the pristine backwater environment.</p>
-                    </div>
-                </div>
-
-                <!-- Experience Philosophy -->
-                <div class="story-block align-center mt-8">
-                    <div class="story-image slide-in-left img-zoom rounded-2xl glass-card p-0">
-                        <img src="assets/homestay.png" class="w-100 rounded-2xl" alt="Boutique Homestay Comfort">
-                    </div>
-                    <div class="story-text slide-in-right glass-container p-4 rounded-2xl">
-                        <h2 class="section-heading text-white">Experience Philosophy</h2>
-                        <p class="text-sand-muted text-lg mt-2">We believe traveling is not just about visiting places; it's about the feelings you take back home. From exhilarating kayaking adventures to the comforting warmth of a traditional homestay meal, our philosophy centers on providing meaningful, unforgettable experiences that speak to the soul.</p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <!-- Why Choose Us -->
-            <div class="container mt-8 fade-up-element">
-                <h2 class="section-heading center text-white">Why Choose Us</h2>
-                <div class="compact-grid mt-4">
-                    <div class="detail-card glass-card rounded-2xl">
-                        <h4>✔ Unique offbeat experiences</h4>
-                    </div>
-                    <div class="detail-card glass-card rounded-2xl">
-                        <h4>✔ Safe and well-organized activities</h4>
-                    </div>
-                    <div class="detail-card glass-card rounded-2xl">
-                        <h4>✔ Affordable packages</h4>
-                    </div>
-                    <div class="detail-card glass-card rounded-2xl">
-                        <h4>✔ Perfect for friends, families, and solo travelers</h4>
+                    <div class="why-choose-card glass-card rounded-2xl">
+                        <div class="why-icon float-icon">👥</div>
+                        <h3>Perfect for Everyone</h3>
+                        <p class="text-sand-muted">Friends, families, and solo travelers.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="particles-container"></div>
+        <!-- SECTION 3: WHAT YOU WILL EXPERIENCE -->
+        <section class="experience-showcase-section">
+            <div class="container">
+                <div class="side-passing-layout">
+                    <div class="side-image fade-up-element">
+                        <img src="assets/experience.png" alt="Kayaking in Backwaters" class="rounded-2xl">
+                    </div>
+                    <div class="side-content fade-up-element delay-1">
+                        <h2 class="section-heading">A Journey You’ll Remember</h2>
+                        <p class="mt-2 mb-4">Glide through narrow waterways, feel the silence of nature, and watch life unfold along the shores. Whether it’s kayaking through peaceful canals or enjoying a slow boat ride, every moment is designed to be simple, beautiful, and unforgettable.</p>
+                        <p class="text-white">This is where memories are made — not rushed, but experienced fully.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SIMPLE GALLERY STRIP -->
+        <section class="gallery-strip-section mt-8">
+            <div class="gallery-track-container">
+                <div class="gallery-track">
+                    <div class="gallery-strip-item"><img src="assets/gallery-kayaking.png" alt="Kayaking"></div>
+                    <div class="gallery-strip-item"><img src="assets/gallery-backwaters.png" alt="Backwaters"></div>
+                    <div class="gallery-strip-item"><img src="assets/gallery-village.png" alt="Village Life"></div>
+                    <div class="gallery-strip-item"><img src="assets/gallery-sunset.png" alt="Sunset"></div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="gallery-strip-item"><img src="assets/gallery-kayaking.png" alt="Kayaking"></div>
+                    <div class="gallery-strip-item"><img src="assets/gallery-backwaters.png" alt="Backwaters"></div>
+                    <div class="gallery-strip-item"><img src="assets/gallery-village.png" alt="Village Life"></div>
+                    <div class="gallery-strip-item"><img src="assets/gallery-sunset.png" alt="Sunset"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FINAL IMPRESSION -->
+        <section class="final-impression-section" style="padding: 10rem 0;">
+            <div class="container center fade-up-element">
+                <h2 class="section-heading">Come, Experience It Yourself</h2>
+                <p class="mt-2 text-lg" style="max-width: 700px; margin: 0 auto;">If you’re looking for something peaceful, real, and different — this is where your journey begins.</p>
+                <div class="mt-4">
+                    <a href="contact.html" class="btn btn-primary">Book Your Journey</a>
+                </div>
+            </div>
         </section>
 
     </main>

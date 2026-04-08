@@ -143,12 +143,11 @@ ul {
 }
 
 .brand-logo {
-    height: 45px;
+    height: 60px; /* Increased size slightly for better visibility as requested by "scale properly" */
     width: auto;
-    border-radius: 50%;
-    background-color: rgba(245, 230, 202, 0.1);
-    padding: 2px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    display: block;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -889,20 +888,30 @@ body::-webkit-scrollbar-thumb {
 }
 
 .glow-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: inline-block;
+    align-self: flex-start;
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #fff;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    z-index: 2;
+}
+
+.card-header-fancy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.card-header-fancy h3, .card-header-fancy h4 {
+    margin: 0 !important;
 }
 
 .gold-badge {
@@ -1799,5 +1808,941 @@ footer p {
 
     .hero-btns-container .btn {
         width: 100%;
+    }
+}
+
+/* =========================================================
+   WHY CHOOSE US (HOME - MODERN & SWIPEABLE)
+   ========================================================= */
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding-top: 1rem;
+}
+
+.why-choose-card {
+    text-align: center;
+    padding: 2.2rem 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    /* rounded-2xl & glass-card handles background, blur, and border-radius */
+}
+
+.why-choose-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 140, 66, 0.4); /* soft glow border */
+}
+
+.why-choose-card .why-icon {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Floating animation */
+.float-icon {
+    animation: gentleFloatUp 4s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes gentleFloatUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
+
+.why-choose-card:hover .why-icon {
+    transform: scale(1.15) translateY(-5px);
+    filter: drop-shadow(0 0 15px rgba(255, 140, 66, 0.8));
+    animation-play-state: paused;
+}
+
+.why-choose-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700; /* bold title */
+    margin-bottom: 0.8rem;
+    color: #fff;
+}
+
+.why-choose-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+    .why-choose-grid {
+        grid-template-columns: repeat(2, 1fr); /* tablet: 2 per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1.5rem; /* space for scroll thumb */
+        gap: 1.2rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* firefox */
+    }
+    
+    .why-choose-grid::-webkit-scrollbar {
+        display: none; /* simple hidden scrollbar on mobile for cleaner look */
+    }
+    
+    .why-choose-card {
+        min-width: 260px;
+        scroll-snap-align: center;
+        padding: 2rem 1.2rem;
+    }
+}
+
+/* =========================================================
+   CURATED PACKAGES (SERVICES PAGE FULL DETAILS)
+   ========================================================= */
+.services-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding-top: 1rem;
+}
+
+.services-pkg-card {
+    background: rgba(11, 31, 58, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.services-pkg-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 140, 66, 0.3);
+}
+
+.services-pkg-card h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.services-pkg-card.highlight-card {
+    background: rgba(11, 31, 58, 0.65);
+    border: 1px solid rgba(255, 140, 66, 0.2);
+}
+
+.services-pkg-price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0.5rem 0 2rem;
+    line-height: 1;
+}
+
+.services-pkg-price span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--sand-beige-muted);
+}
+
+.services-pkg-card .styled-list {
+    margin-bottom: 2.5rem;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+.services-pkg-card .styled-list li {
+    padding-left: 2rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: var(--sand-beige-muted);
+}
+
+.services-pkg-card .styled-list li::before {
+    top: 2px;
+    font-size: 1.1rem;
+    content: '✨';
+}
+
+@media (max-width: 1024px) {
+    .services-pkg-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-pkg-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .services-pkg-card {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* =========================================================
+   PREMIUM PACKAGES PREVIEW (HOME)
+   ========================================================= */
+.packages-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.pkg-preview-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 3rem 2rem 2.5rem; /* extra top padding for the badge */
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.pkg-preview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 140, 66, 0.4); /* soft orange glow border on hover */
+}
+
+.pkg-content {
+    flex-grow: 1;
+}
+
+.pkg-content h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    margin-top: 0;
+}
+
+.pkg-preview-card .btn {
+    margin-top: auto !important; /* Forces button to the bottom */
+}
+
+.pkg-price-large {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 1rem 0;
+    line-height: 1;
+}
+
+.pkg-price-large span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--sand-beige-muted);
+    margin-left: 0.2rem;
+}
+
+.pkg-highlight {
+    font-size: 1rem;
+    color: var(--sand-beige-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .packages-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .packages-preview-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1.5rem;
+        gap: 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .packages-preview-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .pkg-preview-card {
+        min-width: 280px;
+        scroll-snap-align: center;
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* =========================================================
+   PREMIUM BOOKING CTA (HOME)
+   ========================================================= */
+.premium-cta-section {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #030a14, #081a2e);
+    text-align: center;
+}
+
+.premium-cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(235, 142, 52, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.premium-cta-heading {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.premium-cta-subtitle {
+    font-size: 1.2rem;
+    color: var(--sand-beige-muted);
+    font-weight: 500;
+    margin-bottom: 3.5rem;
+}
+
+.premium-cta-buttons {
+    display: inline-flex;
+    padding: 2.5rem 3.5rem;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    background: rgba(11, 31, 58, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.premium-wa-btn {
+    background: #128c7e;
+    color: white;
+    box-shadow: 0 8px 25px rgba(18, 140, 126, 0.4);
+    font-weight: 600;
+    padding: 1.1rem 2.5rem;
+    font-size: 1.15rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border: none;
+}
+
+.premium-wa-btn:hover {
+    background: #25D366;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+    color: white;
+}
+
+.premium-wa-btn:active {
+    transform: scale(0.98);
+}
+
+.glass-outline-btn {
+    padding: 1.1rem 2.5rem;
+    font-size: 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.glass-outline-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05) translateY(-3px);
+    color: #fff;
+}
+
+.glass-outline-btn:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+    .premium-cta-heading {
+        font-size: 2.5rem;
+    }
+    .premium-cta-buttons {
+        flex-direction: column;
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 350px;
+    }
+    .premium-cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* =========================================================
+   ABOUT PAGE STORY & PHILOSOPHY
+   ========================================================= */
+.our-story-section {
+    padding: 8rem 0 6rem;
+    text-align: center;
+    position: relative;
+}
+
+.about-story-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.about-story-text {
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: var(--sand-beige-muted);
+}
+
+.about-hero-title {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.about-parallax-bg {
+    position: relative;
+    padding: 12rem 0;
+    background-image: url('assets/village.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.about-parallax-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(3, 10, 20, 0.65);
+    z-index: 1;
+}
+
+.about-parallax-content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-parallax-subtitle {
+    font-size: 1.5rem;
+    color: rgba(245, 230, 202, 0.9);
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+}
+
+.philosophy-section {
+    padding: 8rem 0 6rem;
+    text-align: center;
+    position: relative;
+}
+
+.philosophy-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 140, 66, 0.08) 0%, rgba(0, 0, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.philosophy-content {
+    position: relative;
+    z-index: 2;
+}
+
+.philosophy-quote {
+    font-size: 3rem;
+    line-height: 1.4;
+    font-weight: 400;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .about-hero-title {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .about-story-text {
+        font-size: 1.1rem;
+    }
+    .about-parallax-subtitle {
+        font-size: 1.2rem;
+    }
+    .philosophy-quote {
+        font-size: 2.2rem;
+    }
+    .about-parallax-bg {
+        padding: 8rem 0;
+        background-attachment: scroll; /* smooth scroll fallback for mobile */
+    }
+    .our-story-section, .philosophy-section {
+        padding: 5rem 0 3rem;
+    }
+}
+
+/* =========================================================
+   STICKY BOOKING BAR (BOTTOM)
+   ========================================================= */
+.sticky-booking-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(11, 31, 58, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 140, 66, 0.3);
+    padding: 12px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transform: translateY(100%);
+    animation: slideUpSticky 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 2s;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slideUpSticky {
+    to { transform: translateY(0); }
+}
+
+.sticky-price {
+    color: var(--accent-sunset);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.sticky-price span {
+    font-size: 0.85rem;
+    color: var(--text-sand-beige);
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Adjust floating WA button so it doesn't overlap the booking bar */
+.float-wa {
+    bottom: 90px !important; 
+}
+
+/* =========================================================
+   SERVICES PAGE ENHANCEMENTS (PREMIUM REDESIGN)
+   ========================================================= */
+
+/* Activities Intro Text */
+.section-intro-text {
+    max-width: 700px;
+    margin: -1rem auto 3rem;
+    color: rgba(245, 230, 202, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Premium Activity Grid (3+1) */
+.activities-grid-premium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.activity-flip-card {
+    perspective: 1500px;
+    height: 480px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.activity-flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Sides */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.flip-card-front {
+    padding: 0;
+    overflow: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    padding: 2.5rem;
+    justify-content: center;
+    background: rgba(11, 31, 58, 0.95);
+    border: 1px solid rgba(255, 140, 66, 0.2);
+}
+
+/* Card Front Content */
+.activity-img-wrapper {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.activity-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.activity-flip-card:hover .activity-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.activity-front-info {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.activity-front-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: var(--bg-aqua-blue);
+}
+
+.activity-front-info p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+/* Layout for 4th card (3+1) */
+@media (min-width: 1025px) {
+    .activity-flip-card:nth-child(4) {
+        grid-column: 1 / 4;
+        width: 380px;
+        margin: 0 auto;
+    }
+}
+
+/* Horizontal Scroll for Curated Packages (Mobile) */
+@media (max-width: 768px) {
+    .activities-grid-premium {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .activity-flip-card {
+        height: 450px;
+    }
+
+    .services-pkg-grid {
+        display: flex !important;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        margin-left: -5%;
+        margin-right: -5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .services-pkg-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .services-pkg-card {
+        min-width: 85%;
+        scroll-snap-align: center;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Hover Reveal Animations for Packages */
+.services-pkg-card {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.services-pkg-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(255, 140, 66, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Utility for text max-width */
+.max-w-lg { max-width: 700px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.text-center { text-align: center; }
+
+/* Flip effect focus on click (mobile accessibility) */
+.activity-flip-card.focused .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================================================
+   ABOUT PAGE CUSTOM SECTIONS
+   ========================================================= */
+.about-content-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-text-center p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(245, 230, 202, 0.9);
+}
+
+.experience-showcase-section {
+    padding: 8rem 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Gallery Strip */
+.gallery-strip-section {
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+.gallery-track-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    animation: scrollGallery 40s linear infinite;
+}
+
+@keyframes scrollGallery {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.gallery-strip-item {
+    width: 400px;
+    height: 280px;
+    border-radius: 20px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.gallery-strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-strip-item:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-sunset);
+}
+
+.gallery-strip-item:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   INDIVIDUAL EXPERIENCE CARDS - FLOATING OBJECTS
+   ========================================================= */
+
+.pricing-grid {
+    gap: 4rem; /* Increased gap to accommodate floating object overflow */
+    padding: 2rem 0;
+}
+
+.price-card {
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 1;
+}
+
+.price-card h3, 
+.price-card .price-tag, 
+.price-card p {
+    position: relative;
+    z-index: 10;
+}
+
+.floating-object {
+    position: absolute;
+    pointer-events: none;
+    z-index: 8;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+    will-change: transform;
+}
+
+.kayak-float {
+    width: 250px;
+    top: -60px;
+    right: -70px;
+    transform: rotate(-15deg) translateY(10px);
+}
+
+.boat-float {
+    width: 270px;
+    top: -50px;
+    left: -80px;
+    transform: rotate(10deg) translateY(10px);
+}
+
+.homestay-float {
+    width: 220px;
+    bottom: -70px;
+    right: -60px;
+    transform: rotate(5deg) translateY(-10px);
+}
+
+/* Hover Animations */
+.price-card:hover .floating-object {
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
+}
+
+.price-card:hover .kayak-float {
+    transform: rotate(-5deg) translate(20px, -20px) scale(1.15);
+}
+
+.price-card:hover .boat-float {
+    transform: rotate(0deg) translate(-20px, -20px) scale(1.15);
+}
+
+.price-card:hover .homestay-float {
+    transform: rotate(0deg) translate(20px, 20px) scale(1.15);
+}
+
+/* Splash/Ripple Visuals */
+.price-card::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.price-card.delay-1::before { top: -80px; right: -90px; } /* Kayaking */
+.price-card.delay-2::before { top: -70px; left: -100px; }  /* Shikkara */
+.price-card.delay-3::before { bottom: -90px; right: -80px; } /* Homestay */
+
+.price-card:hover::before {
+    opacity: 1;
+    animation: premiumRipple 3s infinite;
+}
+
+@keyframes premiumRipple {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { opacity: 0.4; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+    .pricing-grid { gap: 3rem; }
+    .kayak-float { width: 180px; right: -50px; top: -40px; }
+    .boat-float { width: 200px; left: -60px; top: -30px; }
+    .homestay-float { width: 160px; bottom: -50px; right: -40px; }
+}
+
+@media (max-width: 768px) {
+    .pricing-grid { gap: 2rem; }
+    
+    .floating-object {
+        width: 160px;
+        position: relative;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        transform: none !important;
+        margin: -30px auto 1.5rem;
+        display: block;
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+    }
+    
+    .price-card {
+        padding-top: 2rem;
+        overflow: hidden !important; /* Contain objects on small screens for better flow */
+    }
+    
+    .price-card::before {
+        display: none;
+    }
+}
+
+/* Restoring About Page Media Queries */
+@media (max-width: 768px) {
+    .gallery-strip-item {
+        width: 280px;
+        height: 200px;
+    }
+    .side-passing-layout {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 2rem;
+    }
+    .side-image {
+        height: 300px;
     }
 }
