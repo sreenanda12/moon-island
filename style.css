@@ -1,16 +1,31 @@
 :root {
-    --bg-deep-blue: #0B1F3A;
-    --bg-aqua-blue: #2E8BC0;
-    --text-sand-beige: #F5E6CA;
-    --accent-sunset: #FF8C42;
-
-    --bg-gradient: radial-gradient(circle at 50% 50%, #153258 0%, #0B1F3A 80%);
-    --glass-bg: rgba(245, 230, 202, 0.05);
-    /* Sand Beige tinted glass */
-    --glass-border: rgba(245, 230, 202, 0.15);
+    /* Primary Dark Background Palette */
+    --bg-main-glow: radial-gradient(circle at 50% 40%, #1F5A8A 0%, #0E2A47 40%, #081A2E 100%);
+    --bg-deep-blue: #081A2E;
+    
+    /* Text Colors */
+    --text-primary: #EAF4FF;
+    --text-secondary: #A8C1D9;
+    --text-navbar: #0B1F3A;
+    --text-nav-hover: #123A63;
+    
+    /* Accent Colors */
+    --accent-gold: #F6C667;
+    --accent-warm-glow: #FFB347;
+    --accent-blue-glow: rgba(143, 211, 255, 0.4);
+    
+    /* Navbar Light Gradient */
+    --navbar-bg: linear-gradient(90deg, #F2F7FF 0%, #E3F0FF 50%, #D4E6FF 100%);
+    
+    /* Light Section Backgrounds */
+    --bg-light-section: #F6FAFF;
+    --bg-soft-blue: #EAF4FF;
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
+    
+    --glow-shadow: 0 0 20px rgba(207, 232, 255, 0.3);
+    --text-glow: 0 0 8px rgba(207, 232, 255, 0.2);
 }
 
 * {
@@ -20,12 +35,95 @@
     scroll-behavior: smooth;
 }
 
+html {
+    background-color: var(--bg-deep-blue);
+}
+
 body {
+    background-color: transparent;
+    color: var(--text-primary);
     font-family: var(--font-body);
-    background: var(--bg-deep-blue);
-    color: var(--text-sand-beige);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+    text-shadow: var(--text-glow);
+}
+
+/* Global Celestial Background */
+#celestial-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.celestial-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    pointer-events: none;
+    background: var(--bg-main-glow);
+    overflow: hidden;
+}
+
+/* Moonlight Ambient Glow */
+.moonlight-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(143, 211, 255, 0.15), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+    mix-blend-mode: screen;
+}
+
+/* Custom Cursor Glow */
+.mouse-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(143, 211, 255, 0.08), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    mix-blend-mode: screen;
+}
+
+.global-moon {
+    position: fixed;
+    top: 15%;
+    right: 12%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle at 35% 35%, 
+        #fff 0%, 
+        #CFE8FF 20%, 
+        rgba(143, 211, 255, 0.3) 50%, 
+        transparent 80%);
+    border-radius: 50%;
+    filter: blur(2px);
+    z-index: -1; 
+    pointer-events: none;
+    box-shadow: 
+        0 0 60px rgba(207, 232, 255, 0.2),
+        0 0 140px rgba(143, 211, 255, 0.1);
+    animation: moonFloating 12s ease-in-out infinite;
+}
+
+@keyframes moonFloating {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
 }
 
 /* Water Overlay Animation (Subtle) */
@@ -44,14 +142,11 @@ body {
 }
 
 @keyframes driftWater {
-    0% {
-        background-position: 0 0;
-    }
-
-    100% {
-        background-position: 200px 200px;
-    }
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 200px; }
 }
+
+.about-parallax-subtitle
 
 /* Typography */
 h1,
@@ -113,61 +208,86 @@ ul {
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     padding: 1.5rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    transition: background 0.4s ease, padding 0.4s ease, backdrop-filter 0.4s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    /* INITIAL STATE: Transparent */
+    background: transparent;
+    backdrop-filter: blur(0px);
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
 }
 
 .navbar.scrolled {
-    background: rgba(11, 31, 58, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(46, 139, 192, 0.15);
     padding: 1rem 5%;
+    background: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: var(--text-sand-beige);
-    text-shadow: 0 0 15px rgba(245, 230, 202, 0.3);
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 .brand-logo {
-    height: 60px; /* Increased size slightly for better visibility as requested by "scale properly" */
+    height: 70px;
     width: auto;
-    background: transparent;
+    background: transparent !important;
     display: block;
     object-fit: contain;
+    transition: all 0.4s ease;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 5px 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Enhances legibility on various backgrounds */
+}
+
+.navbar.scrolled .brand-logo {
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
 }
 
 .nav-links {
     display: flex;
     gap: 2.5rem;
+    margin-left: auto; /* Aligns links to the right */
 }
 
 .nav-link {
     font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-sand-beige);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    color: #EAF4FF; /* Soft White */
+    text-shadow: 0 0 8px rgba(207, 232, 255, 0.3);
     position: relative;
-    transition: color 0.3s ease;
+    transition: all 0.4s ease;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--text-navbar); /* Dark Navy */
+    text-shadow: none;
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: var(--text-nav-hover);
+    text-shadow: none;
 }
 
 .nav-link::after {
@@ -177,8 +297,9 @@ ul {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-sunset);
-    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--accent-gold);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--accent-gold);
 }
 
 .nav-link:hover::after,
@@ -199,25 +320,70 @@ ul {
     display: block;
     width: 25px;
     height: 2px;
-    background: var(--text-sand-beige);
-    transition: 0.3s;
+    background: #EAF4FF; /* Initial Soft White */
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
-/* Glass UI Components */
+.navbar.scrolled .menu-btn span {
+    background: var(--text-navbar); /* Dark Navy */
+}
+
+/* Glow Buttons */
+.btn-primary {
+    background: var(--bg-soft-blue);
+    color: var(--text-navbar);
+    box-shadow: 0 4px 15px rgba(143, 211, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background: #fff;
+    box-shadow: 0 8px 25px var(--accent-blue-glow);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Glass Card Base - Luxury Glow */
 .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* 3D Hover Tilt applied via JS, but base transitions here */
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--glow-shadow);
+    border-color: rgba(143, 211, 255, 0.3);
+}
+
+.light-section {
+    background-color: var(--bg-light-section);
+    color: var(--text-navbar);
+}
+
+.light-section h2, .light-section h3 {
+    color: var(--text-navbar) !important;
+}
+
+.light-card {
+    background: var(--bg-soft-blue);
+    color: var(--text-navbar);
+    border: none;
+}
+
 .card-3d:hover {
     border-color: rgba(46, 139, 192, 0.4);
     box-shadow: 0 15px 40px rgba(46, 139, 192, 0.15);
@@ -910,7 +1076,8 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
 }
 
-.card-header-fancy h3, .card-header-fancy h4 {
+.card-header-fancy h3,
+.card-header-fancy h4 {
     margin: 0 !important;
 }
 
@@ -1837,7 +2004,8 @@ footer p {
 .why-choose-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 140, 66, 0.4); /* soft glow border */
+    border-color: rgba(255, 140, 66, 0.4);
+    /* soft glow border */
 }
 
 .why-choose-card .why-icon {
@@ -1854,8 +2022,13 @@ footer p {
 }
 
 @keyframes gentleFloatUp {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-8px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-8px);
+    }
 }
 
 .why-choose-card:hover .why-icon {
@@ -1866,7 +2039,8 @@ footer p {
 
 .why-choose-card h3 {
     font-size: 1.25rem;
-    font-weight: 700; /* bold title */
+    font-weight: 700;
+    /* bold title */
     margin-bottom: 0.8rem;
     color: #fff;
 }
@@ -1880,7 +2054,8 @@ footer p {
 
 @media (max-width: 1024px) {
     .why-choose-grid {
-        grid-template-columns: repeat(2, 1fr); /* tablet: 2 per row */
+        grid-template-columns: repeat(2, 1fr);
+        /* tablet: 2 per row */
     }
 }
 
@@ -1890,16 +2065,19 @@ footer p {
         flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-bottom: 1.5rem; /* space for scroll thumb */
+        padding-bottom: 1.5rem;
+        /* space for scroll thumb */
         gap: 1.2rem;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* firefox */
+        scrollbar-width: none;
+        /* firefox */
     }
-    
+
     .why-choose-grid::-webkit-scrollbar {
-        display: none; /* simple hidden scrollbar on mobile for cleaner look */
+        display: none;
+        /* simple hidden scrollbar on mobile for cleaner look */
     }
-    
+
     .why-choose-card {
         min-width: 260px;
         scroll-snap-align: center;
@@ -1966,7 +2144,8 @@ footer p {
 
 .services-pkg-card .styled-list {
     margin-bottom: 2.5rem;
-    flex-grow: 1; /* Pushes button to bottom */
+    flex-grow: 1;
+    /* Pushes button to bottom */
 }
 
 .services-pkg-card .styled-list li {
@@ -1994,6 +2173,7 @@ footer p {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     .services-pkg-card {
         padding: 2rem 1.5rem;
     }
@@ -2012,7 +2192,8 @@ footer p {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 3rem 2rem 2.5rem; /* extra top padding for the badge */
+    padding: 3rem 2rem 2.5rem;
+    /* extra top padding for the badge */
     text-align: center;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -2022,7 +2203,8 @@ footer p {
 .pkg-preview-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 140, 66, 0.4); /* soft orange glow border on hover */
+    border-color: rgba(255, 140, 66, 0.4);
+    /* soft orange glow border on hover */
 }
 
 .pkg-content {
@@ -2038,7 +2220,8 @@ footer p {
 }
 
 .pkg-preview-card .btn {
-    margin-top: auto !important; /* Forces button to the bottom */
+    margin-top: auto !important;
+    /* Forces button to the bottom */
 }
 
 .pkg-price-large {
@@ -2080,11 +2263,11 @@ footer p {
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
-    
+
     .packages-preview-grid::-webkit-scrollbar {
         display: none;
     }
-    
+
     .pkg-preview-card {
         min-width: 280px;
         scroll-snap-align: center;
@@ -2185,12 +2368,14 @@ footer p {
     .premium-cta-heading {
         font-size: 2.5rem;
     }
+
     .premium-cta-buttons {
         flex-direction: column;
         padding: 2.5rem 2rem;
         width: 100%;
         max-width: 350px;
     }
+
     .premium-cta-buttons .btn {
         width: 100%;
         justify-content: center;
@@ -2238,7 +2423,10 @@ footer p {
 
 .about-parallax-overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(3, 10, 20, 0.65);
     z-index: 1;
 }
@@ -2264,7 +2452,8 @@ footer p {
 
 .philosophy-glow {
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
     height: 600px;
@@ -2294,20 +2483,27 @@ footer p {
         font-size: 2.8rem;
         margin-bottom: 1.5rem;
     }
+
     .about-story-text {
         font-size: 1.1rem;
     }
+
     .about-parallax-subtitle {
         font-size: 1.2rem;
     }
+
     .philosophy-quote {
         font-size: 2.2rem;
     }
+
     .about-parallax-bg {
         padding: 8rem 0;
-        background-attachment: scroll; /* smooth scroll fallback for mobile */
+        background-attachment: scroll;
+        /* smooth scroll fallback for mobile */
     }
-    .our-story-section, .philosophy-section {
+
+    .our-story-section,
+    .philosophy-section {
         padding: 5rem 0 3rem;
     }
 }
@@ -2335,7 +2531,9 @@ footer p {
 }
 
 @keyframes slideUpSticky {
-    to { transform: translateY(0); }
+    to {
+        transform: translateY(0);
+    }
 }
 
 .sticky-price {
@@ -2356,7 +2554,7 @@ footer p {
 
 /* Adjust floating WA button so it doesn't overlap the booking bar */
 .float-wa {
-    bottom: 90px !important; 
+    bottom: 90px !important;
 }
 
 /* =========================================================
@@ -2400,7 +2598,8 @@ footer p {
 }
 
 /* Front & Back Sides */
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2520,9 +2719,18 @@ footer p {
 }
 
 /* Utility for text max-width */
-.max-w-lg { max-width: 700px; }
-.mx-auto { margin-left: auto; margin-right: auto; }
-.text-center { text-align: center; }
+.max-w-lg {
+    max-width: 700px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
 
 /* Flip effect focus on click (mobile accessibility) */
 .activity-flip-card.focused .flip-card-inner {
@@ -2569,8 +2777,13 @@ footer p {
 }
 
 @keyframes scrollGallery {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .gallery-strip-item {
@@ -2600,22 +2813,25 @@ footer p {
 }
 
 /* =========================================================
-   INDIVIDUAL EXPERIENCE CARDS - FLOATING OBJECTS
+   REFINED INDIVIDUAL EXPERIENCES - 3D FLOATING CUTOUTS
    ========================================================= */
 
 .pricing-grid {
-    gap: 4rem; /* Increased gap to accommodate floating object overflow */
-    padding: 2rem 0;
+    gap: 4.5rem;
+    /* Spacious gap for elite spacing */
+    padding: 3rem 0;
 }
 
 .price-card {
     position: relative !important;
     overflow: visible !important;
     z-index: 1;
+    transition: transform 0.5s ease;
 }
 
-.price-card h3, 
-.price-card .price-tag, 
+/* Ensure text remains above floating objects */
+.price-card h3,
+.price-card .price-tag,
 .price-card p {
     position: relative;
     z-index: 10;
@@ -2625,107 +2841,163 @@ footer p {
     position: absolute;
     pointer-events: none;
     z-index: 8;
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+    background: transparent !important;
+    border: none !important;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.8s ease, opacity 0.5s ease;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
     will-change: transform;
 }
 
 .kayak-float {
-    width: 250px;
-    top: -60px;
-    right: -70px;
-    transform: rotate(-15deg) translateY(10px);
+    width: 130px;
+    /* Reduced size for elegance */
+    top: -45px;
+    right: -30px;
+    transform: rotate(-15deg) translateY(5px);
 }
 
 .boat-float {
-    width: 270px;
-    top: -50px;
-    left: -80px;
-    transform: rotate(10deg) translateY(10px);
+    width: 140px;
+    /* Reduced size */
+    top: -40px;
+    left: -40px;
+    transform: rotate(8deg) translateY(5px);
 }
 
 .homestay-float {
-    width: 220px;
-    bottom: -70px;
-    right: -60px;
-    transform: rotate(5deg) translateY(-10px);
+    width: 120px;
+    /* Reduced size */
+    bottom: -45px;
+    right: -25px;
+    transform: rotate(5deg) translateY(-5px);
 }
 
-/* Hover Animations */
-.price-card:hover .floating-object {
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
+/* Hover / Click Animation Refinement */
+.price-card:hover .floating-object,
+.price-card:active .floating-object {
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+    opacity: 1;
 }
 
-.price-card:hover .kayak-float {
-    transform: rotate(-5deg) translate(20px, -20px) scale(1.15);
+.price-card:hover .kayak-float,
+.price-card:active .kayak-float {
+    transform: rotate(-5deg) translate(10px, -10px) scale(1.1);
 }
 
-.price-card:hover .boat-float {
-    transform: rotate(0deg) translate(-20px, -20px) scale(1.15);
+.price-card:hover .boat-float,
+.price-card:active .boat-float {
+    transform: rotate(0deg) translate(-10px, -10px) scale(1.1);
 }
 
-.price-card:hover .homestay-float {
-    transform: rotate(0deg) translate(20px, 20px) scale(1.15);
+.price-card:hover .homestay-float,
+.price-card:active .homestay-float {
+    transform: rotate(0deg) translate(8px, 8px) scale(1.1);
 }
 
-/* Splash/Ripple Visuals */
+/* Subtle Splash / Ambient Effect - Moonlit Ripple */
 .price-card::before {
     content: '';
     position: absolute;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(245, 230, 202, 0.15) 0%, transparent 70%);
     border-radius: 50%;
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.6s ease;
     pointer-events: none;
     z-index: 5;
+    animation: luxuriousRipple 5s infinite;
 }
 
-.price-card.delay-1::before { top: -80px; right: -90px; } /* Kayaking */
-.price-card.delay-2::before { top: -70px; left: -100px; }  /* Shikkara */
-.price-card.delay-3::before { bottom: -90px; right: -80px; } /* Homestay */
+.price-card.delay-1::before {
+    top: -60px;
+    right: -50px;
+}
+
+/* Kayaking */
+.price-card.delay-2::before {
+    top: -50px;
+    left: -60px;
+}
+
+/* Shikkara */
+.price-card.delay-3::before {
+    bottom: -60px;
+    right: -40px;
+}
+
+/* Homestay */
 
 .price-card:hover::before {
-    opacity: 1;
-    animation: premiumRipple 3s infinite;
+    opacity: 0.6;
 }
 
-@keyframes premiumRipple {
-    0% { transform: scale(0.5); opacity: 0; }
-    50% { opacity: 0.4; }
-    100% { transform: scale(1.6); opacity: 0; }
+@keyframes luxuriousRipple {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.25;
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
 }
 
-/* Responsive Overrides */
+/* Mobile Optimizations */
 @media (max-width: 1200px) {
-    .pricing-grid { gap: 3rem; }
-    .kayak-float { width: 180px; right: -50px; top: -40px; }
-    .boat-float { width: 200px; left: -60px; top: -30px; }
-    .homestay-float { width: 160px; bottom: -50px; right: -40px; }
+    .pricing-grid {
+        gap: 3.5rem;
+    }
+
+    .kayak-float {
+        width: 110px;
+        right: -25px;
+        top: -35px;
+    }
+
+    .boat-float {
+        width: 120px;
+        left: -30px;
+        top: -30px;
+    }
+
+    .homestay-float {
+        width: 100px;
+        bottom: -35px;
+        right: -20px;
+    }
 }
 
 @media (max-width: 768px) {
-    .pricing-grid { gap: 2rem; }
-    
+    .pricing-grid {
+        gap: 2.5rem;
+    }
+
     .floating-object {
-        width: 160px;
+        width: 100px;
         position: relative;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
-        transform: none !important;
-        margin: -30px auto 1.5rem;
+        transform: rotate(-5deg) !important;
+        margin: -40px auto 1rem;
         display: block;
-        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
     }
-    
+
     .price-card {
-        padding-top: 2rem;
-        overflow: hidden !important; /* Contain objects on small screens for better flow */
+        padding-top: 1.5rem;
+        overflow: hidden !important;
     }
-    
+
     .price-card::before {
         display: none;
     }
@@ -2737,11 +3009,13 @@ footer p {
         width: 280px;
         height: 200px;
     }
+
     .side-passing-layout {
         flex-direction: column !important;
         text-align: center;
         gap: 2rem;
     }
+
     .side-image {
         height: 300px;
     }

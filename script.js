@@ -180,4 +180,101 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 11. Luxury Night Background (Stars & Glow)
+    class CelestialBackground {
+        constructor() {
+            this.canvas = document.getElementById('celestial-canvas');
+            if (!this.canvas) return;
+            this.ctx = this.canvas.getContext('2d');
+            this.stars = [];
+            this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2, tx: window.innerWidth / 2, ty: window.innerHeight / 2 };
+            this.mouseGlow = document.querySelector('.mouse-glow');
+            this.colors = ['#8FD3FF', '#CFE8FF', '#FFFFFF'];
+            
+            this.resize();
+            this.init();
+            this.animate();
+
+            window.addEventListener('resize', () => this.resize());
+            window.addEventListener('mousemove', (e) => {
+                this.mouse.tx = e.clientX;
+                this.mouse.ty = e.clientY;
+            });
+        }
+
+        resize() {
+            this.canvas.width = window.innerWidth;
+            this.canvas.height = window.innerHeight;
+            this.init();
+        }
+
+        init() {
+            this.stars = [];
+            const isMobile = window.innerWidth < 768;
+            const starCount = isMobile ? 80 : 250;
+
+            for (let i = 0; i < starCount; i++) {
+                const depth = Math.random();
+                this.stars.push({
+                    x: Math.random() * this.canvas.width,
+                    y: Math.random() * this.canvas.height,
+                    vx: (Math.random() - 0.5) * 0.05, 
+                    vy: (Math.random() - 0.5) * 0.05,
+                    color: this.colors[Math.floor(Math.random() * this.colors.length)],
+                    opacity: Math.random(),
+                    twinkleSpeed: Math.random() * 0.01 + 0.005,
+                    size: Math.random() * 1.5 * depth + 0.2,
+                    depth: depth 
+                });
+            }
+        }
+
+        updateMouseGlow() {
+            if (!this.mouseGlow) return;
+            // Smoothly move the glow to mouse position
+            this.mouse.x += (this.mouse.tx - this.mouse.x) * 0.1;
+            this.mouse.y += (this.mouse.ty - this.mouse.y) * 0.1;
+            this.mouseGlow.style.left = `${this.mouse.x}px`;
+            this.mouseGlow.style.top = `${this.mouse.y}px`;
+        }
+
+        draw() {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+            this.stars.forEach(star => {
+                // Drift
+                star.x += star.vx;
+                star.y += star.vy;
+
+                // Wrap
+                if (star.x < 0) star.x = this.canvas.width;
+                if (star.x > this.canvas.width) star.x = 0;
+                if (star.y < 0) star.y = this.canvas.height;
+                if (star.y > this.canvas.height) star.y = 0;
+
+                // Twinkle
+                star.opacity += star.twinkleSpeed;
+                if (star.opacity > 1 || star.opacity < 0.2) star.twinkleSpeed *= -1;
+
+                // Parallax
+                const px = (this.mouse.x - window.innerWidth / 2) * (star.depth * 0.015);
+                const py = (this.mouse.y - window.innerHeight / 2) * (star.depth * 0.015);
+
+                this.ctx.globalAlpha = star.opacity;
+                this.ctx.fillStyle = star.color;
+                this.ctx.beginPath();
+                this.ctx.arc(star.x + px, star.y + py, star.size, 0, Math.PI * 2);
+                this.ctx.fill();
+            });
+        }
+
+        animate() {
+            this.updateMouseGlow();
+            this.draw();
+            requestAnimationFrame(() => this.animate());
+        }
+    }
+
+    new CelestialBackground();
 });

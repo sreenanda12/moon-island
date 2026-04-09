@@ -16,11 +16,19 @@
 </head>
 
 <body>
+    <div class="moonlight-overlay"></div>
+    <div class="mouse-glow"></div>
+    
+    <div class="celestial-container">
+        <div class="global-moon"></div>
+    </div>
+    <canvas id="celestial-canvas"></canvas>
+    
     <div class="water-overlay"></div>
 
     <header class="navbar">
         <a href="index.html" class="logo">
-            <img src="moon island logoh.png.jpeg" alt="Moon Island Logo" class="brand-logo">
+            <img src="moon_island_logoh.png-removebg-preview.png" alt="Moon Island Logo" class="brand-logo">
         </a>
         <nav class="nav-links">
             <a href="index.html" class="nav-link active">Home</a>
@@ -69,34 +77,33 @@
         </section>
 
         <!-- WHY CHOOSE US SECTION -->
-        <section class="why-choose-us-section page-with-moon" style="padding: 6rem 0; position: relative; overflow: hidden; background: linear-gradient(to bottom, var(--bg-deep-blue), #071526);">
-            <div class="animated-moon" style="top: 10%; right: 5%;"></div>
+        <section class="why-choose-us-section" style="padding: 6rem 0; position: relative; overflow: hidden;">
             <div class="container">
-                <h2 class="section-heading center fade-up-element text-white mb-8">Why Choose Us</h2>
+                <h2 class="section-heading center fade-up-element mb-8">Why Choose Us</h2>
                 <div class="why-choose-grid mt-4">
                     <!-- Card 1 -->
                     <div class="why-choose-card glass-card rounded-2xl fade-up-element delay-1">
                         <div class="why-icon float-icon">🌿</div>
                         <h3>Unique Experiences</h3>
-                        <p class="text-sand-muted">Explore hidden canals and offbeat backwater routes.</p>
+                        <p>Explore hidden canals and offbeat backwater routes.</p>
                     </div>
                     <!-- Card 2 -->
                     <div class="why-choose-card glass-card rounded-2xl fade-up-element delay-2">
                         <div class="why-icon float-icon">🛟</div>
                         <h3>Safe & Organized</h3>
-                        <p class="text-sand-muted">Guided, secure, and well-planned activities.</p>
+                        <p>Guided, secure, and well-planned activities.</p>
                     </div>
                     <!-- Card 3 -->
                     <div class="why-choose-card glass-card rounded-2xl fade-up-element delay-3">
                         <div class="why-icon float-icon">💰</div>
                         <h3>Affordable Packages</h3>
-                        <p class="text-sand-muted">Enjoy premium experiences at the best price.</p>
+                        <p>Enjoy premium experiences at the best price.</p>
                     </div>
                     <!-- Card 4 -->
                     <div class="why-choose-card glass-card rounded-2xl fade-up-element delay-4">
                         <div class="why-icon float-icon">👨‍👩‍👧</div>
                         <h3>For Everyone</h3>
-                        <p class="text-sand-muted">Perfect for friends, families, and solo travelers.</p>
+                        <p>Perfect for friends, families, and solo travelers.</p>
                     </div>
                 </div>
             </div>
@@ -159,11 +166,10 @@
         </section>
 
         <!-- FEATURED SECTION -->
-        <section class="featured-section page-with-moon" style="position: relative; overflow: hidden; padding: 6rem 0;">
-            <div class="hero-bg-img"
-                style="background-image: url('assets/homestay.png'); filter: brightness(0.4); position: absolute; top: 0; left: 0; width: 100%; height: 120%; z-index: -3;">
-            </div>
-            <div class="animated-moon" style="top: -20px; left: 10%;"></div>
+            <section class="featured-section page-with-moon" style="position: relative; overflow: hidden; padding: 6rem 0;">
+                <div class="hero-bg-img"
+                    style="background-image: url('assets/homestay.png'); filter: brightness(0.4); position: absolute; top: 0; left: 0; width: 100%; height: 120%; z-index: -3;">
+                </div>
             <div class="container center text-white fade-up-element">
                 <h2 class="section-heading hero-fade-up">Experience the Magic of Kerala Backwaters</h2>
                 <p class="mt-2 text-lg hero-soft-fade max-w-lg mx-auto" style="color: rgba(245, 230, 202, 0.9);">Our
@@ -222,7 +228,6 @@
 
         <!-- FINAL CTA SECTION -->
         <section class="premium-cta-section page-with-moon">
-            <div class="animated-moon" style="top: 10%; right: 10%;"></div>
             <div class="premium-cta-glow"></div>
 
             <div class="container fade-up-element center" style="position: relative; z-index: 2;">
