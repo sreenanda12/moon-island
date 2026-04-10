@@ -1630,6 +1630,43 @@ footer {
 footer p {
     font-size: 0.9rem;
     color: rgba(245, 230, 202, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.developer-link {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: rgba(245, 230, 202, 0.35);
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    font-weight: 300;
+}
+
+.developer-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background: var(--accent-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+.developer-link:hover {
+    color: var(--accent-gold);
+    opacity: 1;
+}
+
+.developer-link:hover::after {
+    width: 40px;
+    opacity: 1;
 }
 
 /* Cinematic Components */
