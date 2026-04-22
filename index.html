@@ -54,8 +54,11 @@
         <!-- Hero Section -->
         <section class="hero-premium">
             <div class="hero-bg-container">
-                <img src="assets/hero-bg.png" alt="Moonlit Backwater" class="hero-img-bg">
+                <video autoplay muted loop playsinline class="hero-video-bg-premium" preload="auto">
+                    <source src="moon island vedio hero.mp4" type="video/mp4">
+                </video>
                 <div class="hero-overlay-premium"></div>
+                <div class="moonlight-glow"></div>
                 <div class="mist-effect"></div>
             </div>
             
@@ -71,11 +74,11 @@
                                 <label for="plan-exp">Plan Your Experience</label>
                                 <input type="text" id="plan-exp" placeholder="What are you looking for?">
                             </div>
-                            <a href="contact.html" class="btn btn-primary">Book Now</a>
+                            <a href="contact.html" class="btn btn-primary">Book Experience</a>
                         </div>
                         
                         <div class="hero-btns-secondary stagger-5">
-                            <a href="services.html" class="btn btn-outline">Explore Experiences</a>
+                            <a href="services.html" class="btn btn-outline">Explore Activities</a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +158,7 @@
                 
                 <div class="experience-grid">
                     <!-- Kayaking -->
-                    <div class="experience-card">
+                    <div class="experience-card stagger-item">
                         <div class="experience-img-wrapper">
                             <img src="assets/kayak.png" alt="Kayaking">
                         </div>
@@ -166,7 +169,7 @@
                     </div>
                     
                     <!-- Shikkara -->
-                    <div class="experience-card">
+                    <div class="experience-card stagger-item">
                         <div class="experience-img-wrapper">
                             <img src="assets/boat.png" alt="Shikkara Boating">
                         </div>
@@ -177,7 +180,7 @@
                     </div>
 
                     <!-- Village Walk -->
-                    <div class="experience-card">
+                    <div class="experience-card stagger-item">
                         <div class="experience-img-wrapper">
                             <img src="assets/village.png" alt="Village Walk">
                         </div>
@@ -188,7 +191,7 @@
                     </div>
 
                     <!-- Homestay -->
-                    <div class="experience-card">
+                    <div class="experience-card stagger-item">
                         <div class="experience-img-wrapper">
                             <img src="assets/homestay.png" alt="Boutique Homestay">
                         </div>
@@ -266,7 +269,7 @@
                 </div>
                 
                 <div class="experience-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                    <div class="package-card">
+                    <div class="package-card stagger-item">
                         <h3>Backwater Experience</h3>
                         <div class="price">₹1,499<span>/person</span></div>
                         <ul class="package-features">
@@ -277,7 +280,7 @@
                         <a href="services.html" class="btn btn-outline">Learn More</a>
                     </div>
 
-                    <div class="package-card popular">
+                    <div class="package-card popular stagger-item">
                         <div class="badge">Most Popular</div>
                         <h3>Day Escape Package</h3>
                         <div class="price">₹1,999<span>/person</span></div>
@@ -290,7 +293,7 @@
                         <a href="contact.html" class="btn btn-primary">Book Now</a>
                     </div>
 
-                    <div class="package-card">
+                    <div class="package-card stagger-item">
                         <h3>Stay & Experience</h3>
                         <div class="price">₹3,999<span>/couple</span></div>
                         <ul class="package-features">

@@ -32,20 +32,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Scroll Reveal Animation
+    // 3. Cinematic Scroll Reveal Animation
     const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        const triggerBottom = window.innerHeight * 0.85;
-        revealElements.forEach(el => {
-            const elTop = el.getBoundingClientRect().top;
-            if (elTop < triggerBottom) {
-                el.classList.add('active');
-            }
-        });
+    
+    const revealObserverOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
     
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // Stagger children if any
+                const staggerItems = entry.target.querySelectorAll('.stagger-item');
+                staggerItems.forEach((item, index) => {
+                    item.style.transitionDelay = `${index * 0.15}s`;
+                    item.target.classList.add('active');
+                });
+                
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealObserverOptions);
+    
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
 
     // 4. Celestial Background (Stars)
     class CelestialBackground {
